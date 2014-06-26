@@ -1,3 +1,6 @@
+$('button').click(function(){
+	project.clear()
+})
 // Create a Paper.js Path to draw a line into it:
 var line = new Path({});
 // Give the stroke a color
@@ -112,8 +115,10 @@ var path2 = new Path();					// Create a new path object;
 
 var path3 = new Path.Circle(new Point(200, 200), 80)	// new Path.Circle(new Point(centerX, centerY), radius)
 	path3.strokeColor = 'black';
-	// path3.fullySelected = true;
-	path3.selected = true;								// Show selected w/o handles
+	// path3.fullySelected = true;							// Show selected with handles
+	// path3.selected = true;								// Show selected w/o  handles
+	circle.segments[3].selected = true;						// Show the 4th point in the circle as selected
+
 
 
 
@@ -124,10 +129,25 @@ var path4b	= new Path.Rectangle(path4)
 
 
 
-var path5 = new Path.RegularPolygon(new Point(150, 150), 10, 80)	//  new Path.RegularPolygon(new Point(centerX, centerY), numSides, radius) 
-	path5.strokeColor = 'black';
-	path5.selected = true;
+var path5 = new Path.RegularPolygon(new Point(150, 150), 5, 80)	//  new Path.RegularPolygon(new Point(centerX, centerY), numSides, radius) 
+	// path5.strokeColor = 'black';
+	path5.fillColor = 'red';
+	path5.opacity = .5;
+	path5.selected = false;
 
+	for (var i = 0; i < 5; i++) {
+	var clonePath5 = path5.clone()
+
+    // Distribute the copies horizontally, so we can see them:
+    clonePath5.position.x += i * clonePath5.bounds.width / 2;
+    clonePath5.blendMode = 'xor';
+    clonePath5.selected = false;
+    	view.onFrame = function(event){
+    		// clonePath5.scale(.9);
+    		clonePath5.fillColor = 'orange'; // access the last "item" drawn, and change its styling
+    		clonePath5.rotate(3)
+    	}
+}
 
 
 var path6 = new Path.Circle(new Point(200, 350), 40)	// .removeSegment(index) to remove a point from an object preset constructor
@@ -138,7 +158,7 @@ var path6 = new Path.Circle(new Point(200, 350), 40)	// .removeSegment(index) to
 
 
 var myPath = new Path({
-	segments: [[400, 115], [440, 180], [560, 20]],
+	segments: [[400, 315], [440, 380], [560, 220]],
 	selected: false
 });
 
@@ -149,6 +169,13 @@ var myPath = new Path({
 	myPath.strokeCap = 'butt';		// round, square, or butt
 	myPath.strokeJoin = 'square';	// miter, square, or bezel
 	// myPath.dashArray = [10, 12];		// 10pt dash, 12pt gap
+
+	
+	project.activeLayer.lastChild.fillColor = 'orange'; // access the last "item" drawn, and change its styling
+
+
+
+
 
 
 
@@ -173,6 +200,14 @@ project.currentStyle = {
 	strokeWidth: 3
 };
 
-$('button').click(function(){
-	project.clear()
-})
+
+
+
+
+
+var circlePath = new Path.Circle(new Point(280, 100), 25);
+circlePath.strokeColor = 'black';
+circlePath.fillColor = 'white';
+
+var clones = 30;
+var angle = 360 / clones;

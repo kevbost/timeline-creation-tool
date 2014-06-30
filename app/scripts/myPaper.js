@@ -145,7 +145,7 @@ var path5 = new Path.RegularPolygon(new Point(150, 150), 5, 80)	//  new Path.Reg
     	view.onFrame = function(event){
     		// clonePath5.scale(.9);
     		clonePath5.fillColor = 'orange'; // access the last "item" drawn, and change its styling
-    		clonePath5.rotate(3)
+    		clonePath5.positionX = 30
     	}
 }
 
@@ -205,9 +205,3 @@ project.currentStyle = {
 
 
 
-var circlePath = new Path.Circle(new Point(280, 100), 25);
-circlePath.strokeColor = 'black';
-circlePath.fillColor = 'white';
-
-var clones = 30;
-var angle = 360 / clones;

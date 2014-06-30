@@ -1,0 +1,81 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'canvas-toBlob' ]
+2 info using npm@1.4.9
+3 info using node@v0.10.28
+4 warn package.json timeline-creation-tool@0.0.0 No description
+5 warn package.json timeline-creation-tool@0.0.0 No repository field.
+6 warn package.json timeline-creation-tool@0.0.0 No README data
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'canvas-toBlob', null ]
+9 verbose cache add name=undefined spec="canvas-toBlob" args=["canvas-toBlob",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'canvas-toBlob',
+10 verbose parsed url   path: 'canvas-toBlob',
+10 verbose parsed url   href: 'canvas-toBlob' }
+11 silly lockFile b800175c-canvas-toBlob canvas-toBlob
+12 verbose lock canvas-toBlob /Users/KB/.npm/b800175c-canvas-toBlob.lock
+13 silly lockFile b800175c-canvas-toBlob canvas-toBlob
+14 silly lockFile b800175c-canvas-toBlob canvas-toBlob
+15 verbose addNamed [ 'canvas-toBlob', '' ]
+16 verbose addNamed [ null, '*' ]
+17 silly lockFile 249b99ca-canvas-toBlob canvas-toBlob@
+18 verbose lock canvas-toBlob@ /Users/KB/.npm/249b99ca-canvas-toBlob.lock
+19 silly addNameRange { name: 'canvas-toBlob', range: '*', hasData: false }
+20 verbose url raw canvas-toBlob
+21 verbose url resolving [ 'http://registry.npmjs.org/', './canvas-toBlob' ]
+22 verbose url resolved http://registry.npmjs.org/canvas-toBlob
+23 info trying registry request attempt 1 at 16:59:12
+24 http GET http://registry.npmjs.org/canvas-toBlob
+25 http 404 http://registry.npmjs.org/canvas-toBlob
+26 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R14B04)',
+26 verbose headers   'content-type': 'application/json',
+26 verbose headers   'cache-control': 'max-age=0',
+26 verbose headers   'content-length': '52',
+26 verbose headers   'accept-ranges': 'bytes',
+26 verbose headers   date: 'Sun, 29 Jun 2014 20:59:12 GMT',
+26 verbose headers   via: '1.1 varnish',
+26 verbose headers   age: '0',
+26 verbose headers   connection: 'keep-alive',
+26 verbose headers   'x-served-by': 'cache-dfw1830-DFW',
+26 verbose headers   'x-cache': 'MISS',
+26 verbose headers   'x-cache-hits': '0',
+26 verbose headers   'x-timer': 'S1404075552.469405,VS0,VE54' }
+27 silly registry.get cb [ 404,
+27 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R14B04)',
+27 silly registry.get     'content-type': 'application/json',
+27 silly registry.get     'cache-control': 'max-age=0',
+27 silly registry.get     'content-length': '52',
+27 silly registry.get     'accept-ranges': 'bytes',
+27 silly registry.get     date: 'Sun, 29 Jun 2014 20:59:12 GMT',
+27 silly registry.get     via: '1.1 varnish',
+27 silly registry.get     age: '0',
+27 silly registry.get     connection: 'keep-alive',
+27 silly registry.get     'x-served-by': 'cache-dfw1830-DFW',
+27 silly registry.get     'x-cache': 'MISS',
+27 silly registry.get     'x-cache-hits': '0',
+27 silly registry.get     'x-timer': 'S1404075552.469405,VS0,VE54' } ]
+28 silly lockFile 249b99ca-canvas-toBlob canvas-toBlob@
+29 silly lockFile 249b99ca-canvas-toBlob canvas-toBlob@
+30 error 404 404 Not Found: canvas-toBlob
+30 error 404
+30 error 404 'canvas-toBlob' is not in the npm registry.
+30 error 404 You should bug the author to publish it
+30 error 404 It was specified as a dependency of 'timeline-creation-tool'
+30 error 404
+30 error 404 Note that you can also install from a
+30 error 404 tarball, folder, or http url, or git url.
+31 error System Darwin 13.2.0
+32 error command "node" "/usr/local/bin/npm" "install" "canvas-toBlob"
+33 error cwd /Users/KB/Documents/Projects/2014/06-June/timeline-creation-tool
+34 error node -v v0.10.28
+35 error npm -v 1.4.9
+36 error code E404
+37 verbose exit [ 1, true ]

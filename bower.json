@@ -6,7 +6,9 @@
     "modernizr": "~2.8.2",
     "jquery": "~1.11.1",
     "paper": "~0.9.18",
-    "underscore": "~1.6.0"
+    "underscore": "~1.6.0",
+    "blob": "*",
+    "FileSaver": "*"
   },
   "devDependencies": {}
 }

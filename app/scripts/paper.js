@@ -15,6 +15,8 @@ path.onMouseDown = function(event){
 // =======================================================================
 
 $('.go').click(function(){
+	$('.dateRange').addClass('activated')
+	$('.dataPoint').addClass('activated')
 	project.clear()
 	startYearString = $('.startYear').val()
 	endYearString = $('.endYear').val()
@@ -34,9 +36,6 @@ $('.go').click(function(){
 		// path.add(new Point(view.size.width - view.size.width, 500))
 		// path.add(new Point(view.size.width, 500))
 
-
-
-
 		var style = {
 			fillColor: 'black',
 			fontSize: 20
@@ -53,7 +52,6 @@ $('.go').click(function(){
 						console.log(date.segment)
 		}
 
-
 		// // MASON'S SOLUTION
 		// for (var i = 0; i < 10; i++) {
 
@@ -64,8 +62,6 @@ $('.go').click(function(){
 		// }
 
 
-
-
 		var textItem = new PointText(new Point(0, 10));
 			textItem.fillColor = 'black';
 			textItem.content = 'Click and drag to draw a line.';
@@ -73,7 +69,19 @@ $('.go').click(function(){
 			console.log(path.position)
 })
 
+// Add new dataPoint to graph
+// =======================================================================
 
+$('.add').click(function(){
+	$('.dateRange').addClass('activated')
+	$('.dataPoint').addClass('activated')
+	dataPointStartString = $('.dataPoint-start-input').val()
+	dataPointEndString = $('.dataPoint-end-input').val()
+
+	var dataPointStart = parseInt(dataPointStartString)
+	var dataPointEnd = parseInt(dataPointEndString)
+	console.log('')
+})
 
 
 // var myPoint = new Point(10, 20); 

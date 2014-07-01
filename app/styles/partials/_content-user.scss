@@ -30,7 +30,7 @@ a {
 
 // =======================================================================
 .container {
-		// width: 100%;
+		height: 100%;
 	}
 
 .main {
@@ -44,11 +44,31 @@ a {
 
 #myCanvas {
 	width: 100%;
-	height: 100%;
+	// height: 30em;
 	background-color: rgb(54, 54, 54);
+	// position:fixed !important;
+	// position:absolute;
+	// top:70px;
+	// right:0;
+	// bottom:70px;
+	// left:0;
 }
 
 // =======================================================================
+
+.dateRange {
+	display: inherit;
+	&.activated {
+		display: none;
+	}
+}
+
+.dataPoint {
+	display: none;
+	&.activated {
+		display: inherit;
+	}
+}
 
 // =======================================================================
 // =======================================================================

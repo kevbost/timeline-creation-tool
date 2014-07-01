@@ -24,43 +24,109 @@
 		<!--[if lt IE 10]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div class="container">
 
-			<div class="header">
-			<ul class="nav">
-			<li class="active"><a href="#">Home</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Contact</a></li>
-			</ul>
-			<h3 class="text-muted">timeline creation tool</h3>
-			</div>
 
-			<!-- <div class="hero">
+<!-- nav -->
+
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			  <div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				  <a class="navbar-brand" href="#">Brand</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				  <ul class="nav navbar-nav">
+					<li class="active"><a href="#">Link</a></li>
+					<li><a href="#">Link</a></li>
+					<li class="dropdown">
+					  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+					  <ul class="dropdown-menu" role="menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+						<li class="divider"></li>
+						<li><a href="#">One more separated link</a></li>
+					  </ul>
+					</li>
+				  </ul>
+
+				  <ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Link</a></li>
+					<li class="dropdown">
+					  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+					  <ul class="dropdown-menu" role="menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+					  </ul>
+					</li>
+				  </ul>
+				</div><!-- /.navbar-collapse -->
+			  </div><!-- /.container-fluid -->
+			</nav>
+<!-- /nav -->
+
+<!-- 			<div class="hero">
 				<h1>Hi...</h1>
 				<p><a class="btn btn-lg btn-success" href="#">Good JERB! <span class="glyphicon glyphicon-ok"></span></a></p>
 			</div> -->
 
-			<div class="main">
-				<div class="row">
-					<div class="col-md-5">
-						<div class="input-title">Start Date</div>
-						<input class="start" type="text" placeholder="start year (yyyy)" value="1980">
-					</div>
-					<div class="col-md-5">
-						<div class="input-title">End Date</div>
-						<input class="end" type="text" placeholder="end year (yyyy)" value="1990">
-					</div>
-				</div>
-				<div class="row">
-					div.col
-					<button class="go">GO</button>
-				</div>
+<!-- main area -->
 
+		<div class="container">
+			<div class="jumbotron">
 				<canvas id="myCanvas" resize>
 				</canvas>
-				<button class="save">Save as PNG</button>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-xs-6 col-sm-6">
+							<div class="input-group">
+							  <span class="input-group-addon">RANGE</span>
+							  <input type="text" class="form-control startYear" placeholder="earliest year" value="1980">
+							</div> <!-- /.input-group -->
+						</div> <!-- /.col-xs-6 col-sm-6 -->
+						<div class="col-xs-6 col-sm-6">
+							<div class="input-group">
+							  <span class="input-group-addon">RANGE</span>
+							  <input type="text" class="form-control endYear" placeholder="latest year" value="1990">
+							</div> <!-- /.input-group -->
+						</div> <!-- /.col-xs-6 col-sm-6 -->
+					</div> <!-- /.row -->
+					<div class="row">
+						<div class="col-xs-6 col-sm-6">
+							<div class="input-group">
+								<input type="text" class="form-control">
+							</div> <!-- /input-group -->
+						</div> <!-- /.col-lg-6 -->
+						<div class="col-xs-6 col-sm-6">
+							<div class="input-group">
+								<input type="text" class="form-control">
+								<span class="input-group-btn">
+									<button class="btn btn-default go" type="button">+</button>
+								</span> <!-- /.input-group -->
+							</div> <!-- /input-group -->
+						</div> <!-- /.col-lg-6 -->				
+					</div> <!-- /.row -->
+				</div> <!-- /.form-group -->
+			</div> <!-- /.jumbotron -->
 
-			</div>
+			<button class="save">Save as PNG</button>
+
+		</div>
+
+<!-- /main area -->
 
 			<div class="footer"></div>
 

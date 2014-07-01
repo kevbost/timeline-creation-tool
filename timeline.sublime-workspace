@@ -5,11 +5,47 @@
 		[
 			[
 				"backg",
-				"background-color"
+				"background-image"
+			],
+			[
+				"tabl",
+				"table-caption"
+			],
+			[
+				"date",
+				"dateList"
+			],
+			[
+				"startDate",
+				"startDateString"
+			],
+			[
+				"con",
+				"content"
+			],
+			[
+				"Point",
+				"PointText"
 			],
 			[
 				"st",
+				"startDate"
+			],
+			[
+				"start",
+				"startDate"
+			],
+			[
+				"stroke",
+				"strokeCap"
+			],
+			[
+				"stro",
 				"strokeWidth"
+			],
+			[
+				"placed",
+				"placedSymbol"
 			],
 			[
 				"sy",
@@ -248,10 +284,6 @@
 				"reposContainer"
 			],
 			[
-				"con",
-				"console"
-			],
-			[
 				"paddin",
 				"padding-top"
 			],
@@ -459,55 +491,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/index.html",
-			"settings":
-			{
-				"buffer_size": 3944,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/scripts/main.js",
-			"settings":
-			{
-				"buffer_size": 28,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/scripts/myPaper.js",
-			"settings":
-			{
-				"buffer_size": 5415,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/scripts/paper.js",
-			"settings":
-			{
-				"buffer_size": 2163,
-				"line_ending": "Unix",
-				"name": "paper.js"
-			}
-		},
-		{
-			"file": "app/styles/partials/_content.scss",
-			"settings":
-			{
-				"buffer_size": 473,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/scripts/data.js",
-			"settings":
-			{
-				"buffer_size": 871,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -515,6 +498,14 @@
 		"height": 375.0,
 		"selected_items":
 		[
+			[
+				"synt",
+				"Set Syntax: SCSS"
+			],
+			[
+				"syntax sa",
+				"Set Syntax: Sass"
+			],
 			[
 				"snippet",
 				"Snippet: Backbone.js collection add"
@@ -652,7 +643,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 561.0
+		"width": 518.0
 	},
 	"console":
 	{
@@ -670,6 +661,23 @@
 	"file_history":
 	[
 		"/Users/KB/Documents/Projects/2014/06-June/timeline-creation-tool/app/styles/partials/_reset.scss",
+		"/Users/KB/Documents/Projects/2014/06-June/timeline-creation-tool/app/styles/partials/_mixins.scss",
+		"/Users/KB/Documents/Projects/2014/06-June/timeline-creation-tool/app/styles/main.scss",
+		"/Users/KB/Documents/Projects/2014/06-June/timeline-creation-tool/app/scripts/data.js",
+		"/Users/KB/Documents/Projects/2014/06-June/timeline-creation-tool/app/scripts/paper.js",
+		"/Users/KB/Documents/Projects/2014/06-June/timeline-creation-tool/app/scripts/models.js",
+		"/Users/KB/Documents/Projects/2014/06-June/timeline-creation-tool/app/scripts/app-view.js",
+		"/Users/KB/Documents/Projects/2014/06-June/kb-parse-image-gallery/app/index.html",
+		"/Users/KB/Documents/Projects/2014/06-June/kb-parse-image-gallery/app/styles/main.scss",
+		"/Users/KB/Documents/Projects/2014/06-June/kb-parse-image-gallery/app/scripts/main.js",
+		"/Users/KB/Documents/Projects/2014/06-June/kb-parse-image-gallery/app/scripts/login-view.js",
+		"/Users/KB/Documents/Projects/2014/06-June/kb-parse-image-gallery/app/scripts/image-view.js",
+		"/Users/KB/Documents/Projects/2014/06-June/kb-parse-image-gallery/app/scripts/edit-view.js",
+		"/Users/KB/Documents/Projects/2014/06-June/kb-parse-image-gallery/app/scripts/app-view.js",
+		"/Users/KB/Documents/Projects/2014/06-June/kb-parse-image-gallery/app/scripts/upload-view.js",
+		"/Users/KB/Documents/Projects/2014/06-June/kb-parse-image-gallery/app/scripts/router.js",
+		"/Users/KB/Documents/Projects/2014/06-June/kb-parse-image-gallery/app/scripts/model.js",
+		"/Users/KB/Documents/Projects/2014/06-June/timeline-creation-tool/bower_components/paper/dist/paper-full.js",
 		"/Users/KB/Documents/Projects/2014/06-June/timeline-creation-tool/app/scripts/vektor.js",
 		"/Users/KB/Documents/Projects/2014/06-June/kb-image-gallery/app/index.html",
 		"/Users/KB/Documents/Projects/2014/06-June/kb-image-gallery/app/scripts/main.js",
@@ -779,24 +787,7 @@
 		"/Users/KB/Documents/_Mou/2014/May/12 - jQuery - May 12, 2014.md",
 		"/Users/KB/Documents/Projects/2014/May/js-day-three/extra.js",
 		"/Users/KB/Documents/Projects/2014/May/js-day-three/jquery-2.1.1.js",
-		"/Users/KB/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
-		"/Users/KB/Library/Application Support/Sublime Text 2/Packages/SideBarEnhancements/Side Bar.sublime-settings",
-		"/Users/KB/Library/Application Support/Sublime Text 2/Packages/User/ClickableUrls.sublime-settings",
-		"/Users/KB/Library/Application Support/Sublime Text 2/Packages/SassBeautify/SassBeautify.sublime-settings",
-		"/Users/KB/Library/Application Support/Sublime Text 2/Packages/JsFormat/Default (OSX).sublime-keymap",
-		"/Users/KB/Documents/Projects/2014/May/js-intro/node_modules/bourbon/node_modules/handlebars/node_modules/uglify-js/test/beautify.js",
-		"/Users/KB/Documents/Projects/2014/May/js-intro/src/index.html",
-		"/Users/KB/Documents/Projects/2014/May/js-day-two/index.html",
-		"/Users/KB/Documents/Projects/2014/May/js-day-two/main.css",
-		"/Users/KB/Documents/Projects/2014/May/js-intro/src/assets/scripts/main.js",
-		"/Users/KB/Documents/Projects/2014/May/js-day-two/main.js",
-		"/Users/KB/Documents/Projects/2014/May/sass-intro/gulpfile.js",
-		"/Users/KB/Documents/Projects/2014/May/js-intro/gulpfile.js",
-		"/Users/KB/Documents/Projects/2014/May/js-intro/src/assets/stylesheets/main.scss",
-		"/Users/KB/Documents/Projects/2014/May/js-intro/src/Congressmen API/index.html",
-		"/Users/KB/Documents/Projects/2014/May/js-intro/src/Congressmen API/main.js",
-		"/Users/KB/Documents/Projects/2014/May/js-intro/src/test/index.html",
-		"/Users/KB/Documents/Projects/2014/May/js-intro/src/test/main.js"
+		"/Users/KB/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap"
 	],
 	"find":
 	{
@@ -815,6 +806,22 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"gray",
+			"bootstrap",
+			"span",
+			"textItem",
+			"amount",
+			"start",
+			"textItem",
+			"button",
+			"		var text = new PointText(center\n",
+			"{\n",
+			"PointText",
+			");\n",
+			"});\n",
+			"var values = {\n	fixLength: false,\n	fixAngle: false,\n	showCircle: false,\n	showAngleLength: true,\n	showCoordinates: false\n};\n\nvar vectorStart, vector, vectorPrevious;\nvar vectorItem, items, dashedItems;\n\nfunction processVector(event, drag) {\n	vector = event.point - vectorStart;\n	if (vectorPrevious) {\n		if (values.fixLength && values.fixAngle) {\n			vector = vectorPrevious;\n		} else if (values.fixLength) {\n			vector.length = vectorPrevious.length;\n		} else if (values.fixAngle) {\n			vector = vector.project(vectorPrevious);\n		}\n	}\n	drawVector(drag);\n}\n\nfunction drawVector(drag) {\n	if (items) {\n		for (var i = 0, l = items.length; i < l; i++) {\n			items[i].remove();\n		}\n	}\n	if (vectorItem)\n		vectorItem.remove();\n	items = [];\n	var arrowVector = vector.normalize(10);\n	var end = vectorStart + vector;\n	vectorItem = new Group([\n		new Path([vectorStart, end]),\n		new Path([\n			end + arrowVector.rotate(135),\n			end,\n			end + arrowVector.rotate(-135)\n		])\n	]);\n	vectorItem.strokeWidth = 0.75;\n	vectorItem.strokeColor = '#e4141b';\n	// Display:\n	dashedItems = [];\n	// Draw Circle\n	if (values.showCircle) {\n		dashedItems.push(new Path.Circle({\n			center: vectorStart,\n			radius: vector.length\n		}));\n	}\n	// Draw Labels\n	if (values.showAngleLength) {\n		drawAngle(vectorStart, vector, !drag);\n		if (!drag)\n			drawLength(vectorStart, end, vector.angle < 0 ? -1 : 1, true);\n	}\n	var quadrant = vector.quadrant;\n	if (values.showCoordinates && !drag) {\n		drawLength(vectorStart, vectorStart + [vector.x, 0],\n				[1, 3].indexOf(quadrant) != -1 ? -1 : 1, true, vector.x, 'x: ');\n		drawLength(vectorStart, vectorStart + [0, vector.y], \n				[1, 3].indexOf(quadrant) != -1 ? 1 : -1, true, vector.y, 'y: ');\n	}\n	for (var i = 0, l = dashedItems.length; i < l; i++) {\n		var item = dashedItems[i];\n		item.strokeColor = 'black';\n		item.dashArray = [1, 2];\n		items.push(item);\n	}\n	// Update palette\n	values.x = vector.x;\n	values.y = vector.y;\n	values.length = vector.length;\n	values.angle = vector.angle;\n}\n\nfunction drawAngle(center, vector, label) {\n	var radius = 25, threshold = 10;\n	if (vector.length < radius + threshold || Math.abs(vector.angle) < 15)\n		return;\n	var from = new Point(radius, 0);\n	var through = from.rotate(vector.angle / 2);\n	var to = from.rotate(vector.angle);\n	var end = center + to;\n	dashedItems.push(new Path.Line(center,\n			center + new Point(radius + threshold, 0)));\n	dashedItems.push(new Path.Arc(center + from, center + through, end));\n	var arrowVector = to.normalize(7.5).rotate(vector.angle < 0 ? -90 : 90);\n	dashedItems.push(new Path([\n			end + arrowVector.rotate(135),\n			end,\n			end + arrowVector.rotate(-135)\n	]));\n	if (label) {\n		// Angle Label\n		var text = new PointText(center\n				+ through.normalize(radius + 10) + new Point(0, 3));\n		text.content = Math.floor(vector.angle * 100) / 100 + '°';\n		text.fillColor = 'black';\n		items.push(text);\n	}\n}\n\nfunction drawLength(from, to, sign, label, value, prefix) {\n	var lengthSize = 5;\n	if ((to - from).length < lengthSize * 4)\n		return;\n	var vector = to - from;\n	var awayVector = vector.normalize(lengthSize).rotate(90 * sign);\n	var upVector = vector.normalize(lengthSize).rotate(45 * sign);\n	var downVector = upVector.rotate(-90 * sign);\n	var lengthVector = vector.normalize(\n			vector.length / 2 - lengthSize * Math.sqrt(2));\n	var line = new Path();\n	line.add(from + awayVector);\n	line.lineBy(upVector);\n	line.lineBy(lengthVector);\n	line.lineBy(upVector);\n	var middle = line.lastSegment.point;\n	line.lineBy(downVector);\n	line.lineBy(lengthVector);\n	line.lineBy(downVector);\n	dashedItems.push(line);\n	if (label) {\n		// Length Label\n		var textAngle = Math.abs(vector.angle) > 90\n				? textAngle = 180 + vector.angle : vector.angle;\n		// Label needs to move away by different amounts based on the\n		// vector's quadrant:\n		var away = (sign >= 0 ? [1, 4] : [2, 3]).indexOf(vector.quadrant) != -1\n				? 8 : 0;\n		value = value || vector.length;\n		var text = new PointText({\n			point: middle + awayVector.normalize(away + lengthSize),\n			content: (prefix || '') + Math.floor(value * 1000) / 1000,\n			fillColor: 'black',\n			justification: 'center'\n		});\n		text.rotate(textAngle);\n		items.push(text);\n	}\n}\n\nvar dashItem;\n\nfunction onMouseDown(event) {\n	var end = vectorStart + vector;\n	var create = false;\n	if (event.modifiers.shift && vectorItem) {\n		vectorStart = end;\n		create = true;\n	} else if (vector && (event.modifiers.option\n			|| end && end.getDistance(event.point) < 10)) {\n		create = false;\n	} else {\n		vectorStart = event.point;\n	}\n	if (create) {\n		dashItem = vectorItem;\n		vectorItem = null;\n	}\n	processVector(event, true);\n//	document.redraw();\n}\n\nfunction onMouseDrag(event) {\n	if (!event.modifiers.shift && values.fixLength && values.fixAngle)\n		vectorStart = event.point;\n	processVector(event, event.modifiers.shift);\n}\n\nfunction onMouseUp(event) {\n	processVector(event, false);\n	if (dashItem) {\n		dashItem.dashArray = [1, 2];\n		dashItem = null;\n	}\n	vectorPrevious = vector;\n}",
+			"color",
+			"colo",
 			"ImageView",
 			"logout",
 			"cursor",
@@ -926,12 +933,7 @@
 			".footimg01 {\n	background-image: url(img/01.gif);\n	float:left;\n	height:330px;\n	width:25%;\n	border: 2px dashed;\n}",
 			"}\n",
 			"\n.",
-			".foot {\n	background-color: #fff;\n	/*display:inline-block;*/\n	height:146px;\n	width:100%;\n	border: 2px dashed;\n	border-color: #D3D3D3;\n	clear: both;\n	text-align: center;\n}\n\n.footh1 {\n	font-family: 'Oswald', 'sans-serif';\n	font-size: 60px;\n	color:#083451;\n	margin-top:25px;\n}",
-			">\n",
-			"div",
-			"\">\n",
-			"<div class=\"overlay\">",
-			"<body>\n	<div class=\"cool-example\"></div>\n	<div class=\"uncool-example\"></div>"
+			".foot {\n	background-color: #fff;\n	/*display:inline-block;*/\n	height:146px;\n	width:100%;\n	border: 2px dashed;\n	border-color: #D3D3D3;\n	clear: both;\n	text-align: center;\n}\n\n.footh1 {\n	font-family: 'Oswald', 'sans-serif';\n	font-size: 60px;\n	color:#083451;\n	margin-top:25px;\n}"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -982,856 +984,13 @@
 	"groups":
 	[
 		{
-			"selected": 3,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/index.html",
-					"settings":
-					{
-						"buffer_size": 3944,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3888,
-								3888
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1025.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/scripts/main.js",
-					"settings":
-					{
-						"buffer_size": 28,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/scripts/myPaper.js",
-					"settings":
-					{
-						"buffer_size": 5415,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5415,
-								5415
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2.0,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5.0,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10.0,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2943.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/scripts/paper.js",
-					"settings":
-					{
-						"buffer_size": 2163,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2163,
-								2163
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"auto_name": "paper.js",
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2.0,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5.0,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10.0,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1017.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		},
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 4,
-					"file": "app/styles/partials/_content.scss",
-					"settings":
-					{
-						"buffer_size": 473,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								346,
-								346
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2.0,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5.0,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10.0,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/scripts/data.js",
-					"settings":
-					{
-						"buffer_size": 871,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								871,
-								871
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2.0,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5.0,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10.0,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 111.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1863,7 +1022,7 @@
 		"cols":
 		[
 			0.0,
-			0.590184371603,
+			0.522363382125,
 			1.0
 		],
 		"rows":
@@ -1905,7 +1064,7 @@
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 203.0,
 	"status_bar_visible": true
 }

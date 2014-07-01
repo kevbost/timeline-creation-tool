@@ -16,12 +16,12 @@ path.onMouseDown = function(event){
 
 $('.go').click(function(){
 	project.clear()
-	startDateString = $('.start').val()
-	endDateString = $('.end').val()
+	startYearString = $('.startYear').val()
+	endYearString = $('.endYear').val()
 
-	var startDate = parseInt(startDateString)
-	var endDate = parseInt(endDateString)
-	var dateRange = endDate - startDate;
+	var startYear = parseInt(startYearString)
+	var endYear = parseInt(endYearString)
+	var dateRange = endYear - startYear;
 
 		var path = new Path({
 			// 80% black:
@@ -46,7 +46,7 @@ $('.go').click(function(){
 				// var d = new Point(i / dateRange, 1) * (view.size -= 50)
 					date = path.add(new Point(i / dateRange, 1) * (view.size -=55));
 					var dateList = new PointText(new Point(i / dateRange, 1) * (view.size -= 50));
-						dateList.content = (startDate += 1);
+						dateList.content = (startYear += 1);
 						dateList.style = style;
 						// dateList.fontSize = 500 / dateRange;
 						dateList.rotate(270)
@@ -54,6 +54,14 @@ $('.go').click(function(){
 		}
 
 
+		// // MASON'S SOLUTION
+		// for (var i = 0; i < 10; i++) {
+
+		// 	var dateList = new PointText(new Point(view.size / i, 200));
+		// 	dateList.content = (i);
+		// 	dateList.style = style;
+		// 	dateList.rotate(270)
+		// }
 
 
 
@@ -64,11 +72,6 @@ $('.go').click(function(){
 
 			console.log(path.position)
 })
-
-
-
-
-
 
 
 

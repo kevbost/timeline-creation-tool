@@ -3,7 +3,15 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 @import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
 
-@import "partials/variables";
-@import "partials/mixins";
-@import "partials/reset";
-@import "partials/content";
+@import "partials/variables-user";
+@import "partials/mixins-user";
+@import "partials/reset-user";
+@import "partials/media-queries-user";
+@import "partials/content-user";
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}

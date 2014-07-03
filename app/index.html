@@ -38,7 +38,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				  </button>
-				  <a class="navbar-brand" href="#">Brand</a>
+				  <a class="navbar-brand" href="#">SUBLIGHT</a>
 				</div>
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
@@ -87,47 +87,55 @@
 
 		<div class="container">
 			<div class="jumbotron">
-				<canvas id="myCanvas" resize>
+				<canvas id="myCanvas" width="150" height="150">
 				</canvas>
+
 				<div class="form-group">
 					<div class="row dateRange">
-						<div class="col-xs-6 col-sm-6 col-md-3">
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 							<div class="input-group">
-							  <input type="text" class="form-control startYear" placeholder="earliest year" value="1980">
 							  <span class="input-group-addon">START YEAR</span>
+							  <input type="text" class="form-control startYear" placeholder="earliest year" value="1980">
 							</div> <!-- /.input-group -->
 						</div> <!-- /.col-xs-6 col-sm-6 -->
-						<div class="col-xs-6 col-sm-6 col-md-3">
+
+
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 							<div class="input-group">
 							  <span class="input-group-addon">END YEAR</span>
 							  <input type="text" class="form-control endYear" placeholder="latest year" value="1990">
 							  	<span class="input-group-btn">
 									<button class="btn btn-default go" type="button">+</button>
-								</span> <!-- /.input-group -->
+								</span> <!-- /.input-group-btn -->
 							</div> <!-- /.input-group -->
 						</div> <!-- /.col-xs-6 col-sm-6 -->
 					</div> <!-- /.row -->
+
+
 					<div class="row dataPoint">
-						<div class="col-xs-6 col-sm-6 col-md-3">
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 							<div class="input-group">
-								<input type="text" class="form-control dataPoint-start-input">
-								<span class="input-group-addon">RANGE</span>
+								<span class="input-group-addon">ADD START</span>
+								<input type="text" class="form-control dataPoint-start-input" value="1981">
 							</div> <!-- /input-group -->
 						</div> <!-- /.col-lg-6 -->
-						<div class="col-xs-6 col-sm-6 col-md-3">
+ 
+
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 							<div class="input-group">
-								<span class="input-group-addon">RANGE</span>
-								<input type="text" class="form-control dataPoint-end-input">
+								<span class="input-group-addon">ADD END</span>
+								<input type="text" class="form-control dataPoint-end-input" value="1983">
 								<span class="input-group-btn">
-									<button class="btn btn-default add" type="button">+</button>
-								</span> <!-- /.input-group -->
+									<button class="btn btn-default add" type="button">add</button>
+								</span> <!-- /.input-group-btn -->
 							</div> <!-- /input-group -->
 						</div> <!-- /.col-lg-6 -->				
 					</div> <!-- /.row -->
+
 				</div> <!-- /.form-group -->
 			</div> <!-- /.jumbotron -->
 
-			<button class="save btn">Save as PNG</button>
+			<!-- <button class="save btn">Save as PNG</button> -->
 
 		</div>
 
@@ -143,9 +151,9 @@
 		<script src="bower_components/underscore/underscore.js"></script>
 		<script src="bower_components/blob/blob.js"></script>
 		<script src="bower_components/FileSaver/FileSaver.js"></script>
+		<script src="bower_components/jquery-mousewheel/jquery.mousewheel.js"></script>
 		<!-- endbower -->
 		<!-- endbuild -->
-
 		<script src="//www.parsecdn.com/js/parse-1.2.18.min.js"></script>
 
 

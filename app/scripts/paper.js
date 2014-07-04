@@ -226,7 +226,7 @@ console.log('%cStartYear is ' + startYear, 'font-size:20px;color:green')
 
 		var dataPointRangeCounter = dataPointRange;
 		var dataPointRect = new Rectangle(
-							new Point(width / dateRange * (dateRange / dataPointRange), (view.bounds.bottom - 100)), 
+							new Point(0, (view.bounds.bottom - 100)), 
 							new Size(((width / dateRange) * dataPointRange), 10)
 						);
 			var path = new Path.Rectangle(dataPointRect);

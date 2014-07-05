@@ -1,28 +1,67 @@
+//   ______  ______             ____     __     ______   __  __   ____                           
+//  /\__  _\/\__  _\   /'\_/`\ /\  _`\  /\ \   /\__  _\ /\ \/\ \ /\  _`\                         
+//  \/_/\ \/\/_/\ \/  /\      \\ \ \L\_\\ \ \  \/_/\ \/ \ \ `\\ \\ \ \L\_\                       
+//     \ \ \   \ \ \  \ \ \__\ \\ \  _\L \ \ \  __\ \ \  \ \ , ` \\ \  _\L                       
+//      \ \ \   \_\ \__\ \ \_/\ \\ \ \L\ \\ \ \L\ \\_\ \__\ \ \`\ \\ \ \L\ \                     
+//       \ \_\  /\_____\\ \_\\ \_\\ \____/ \ \____//\_____\\ \_\ \_\\ \____/                     
+//        \/_/  \/_____/ \/_/ \/_/ \/___/   \/___/ \/_____/ \/_/\/_/ \/___/                      
+//           ____     ____     ____     ______   ______  ______   _____    __  __                
+//          /\  _`\  /\  _`\  /\  _`\  /\  _  \ /\__  _\/\__  _\ /\  __`\ /\ \/\ \               
+//          \ \ \/\_\\ \ \L\ \\ \ \L\_\\ \ \L\ \\/_/\ \/\/_/\ \/ \ \ \/\ \\ \ `\\ \              
+//           \ \ \/_/_\ \ ,  / \ \  _\L \ \  __ \  \ \ \   \ \ \  \ \ \ \ \\ \ , ` \             
+//            \ \ \L\ \\ \ \\ \ \ \ \L\ \\ \ \/\ \  \ \ \   \_\ \__\ \ \_\ \\ \ \`\ \            
+//             \ \____/ \ \_\ \_\\ \____/ \ \_\ \_\  \ \_\  /\_____\\ \_____\\ \_\ \_\           
+//              \/___/   \/_/\/ / \/___/   \/_/\/_/   \/_/  \/_____/ \/_____/ \/_/\/_/           
+//                 ______  _____    _____    __                                                  
+//                /\__  _\/\  __`\ /\  __`\ /\ \                                                 
+//                \/_/\ \/\ \ \/\ \\ \ \/\ \\ \ \                                                
+//                   \ \ \ \ \ \ \ \\ \ \ \ \\ \ \  __                                           
+//                    \ \ \ \ \ \_\ \\ \ \_\ \\ \ \L\ \                                          
+//                     \ \_\ \ \_____\\ \_____\\ \____/                                          
+//                      \/_/  \/_____/ \/_____/ \/___/                                           
+//           _          _                   _          _            _                   _        _        
+//          /\ \       / /\                /\ \       /\ \         /\ \                /\ \     / /\      
+//         /  \ \     / /  \              /  \ \     /  \ \       /  \ \               \ \ \   / /  \     
+//        / /\ \ \   / / /\ \            / /\ \ \   / /\ \ \     / /\ \ \              /\ \_\ / / /\ \__  
+//       / / /\ \_\ / / /\ \ \          / / /\ \_\ / / /\ \_\   / / /\ \_\            / /\/_// / /\ \___\ 
+//      / / /_/ / // / /  \ \ \        / / /_/ / // /_/_ \/_/  / / /_/ / /   _       / / /   \ \ \ \/___/ 
+//     / / /__\/ // / /___/ /\ \      / / /__\/ // /____/\    / / /__\/ /   /\ \    / / /     \ \ \       
+//    / / /_____// / /_____/ /\ \    / / /_____// /\____\/   / / /_____/    \ \_\  / / /  _    \ \ \      
+//   / / /      / /_________/\ \ \  / / /      / / /______  / / /\ \ \  _   / / /_/ / /  /_/\__/ / /      
+//  / / /      / / /_       __\ \_\/ / /      / / /_______\/ / /  \ \ \/\_\/ / /__\/ /   \ \/___/ /       
+//  \/_/       \_\___\     /____/_/\/_/       \/__________/\/_/    \_\/\/_/\/_______/     \_____\/        
+//                                                                                                        
+//                                                                                               
 // =======================================================================
-console.log('%cCanvas width is ' + view.size.width, 'font-size:20px;background-color:orange')
-console.log('%cCanvas height is ' + view.size.height, 'font-size:20px;background-color:orange')
+console.log('%cCanvas width is ' + view.size.width, 'font-size:20px;background-color:orange');
+console.log('%cCanvas height is ' + view.size.height, 'font-size:20px;background-color:orange');
 // =======================================================================
 // VARIABLES
 // =======================================================================
-var grayDarker 		=	'#222';
-var grayDark 		=	'#333';
-var gray 			=	'#555';
-var grayLight 		=	'#777';
-var grayLighter 	=	'#eee';
 
-var brandPrimary 	=	'#428bca';
-var brandSuccess 	=	'#5cb85c';
-var brandInfo 		=	'#5bc0de';
-var brandWarning 	=	'#f0ad4e';
-var brandDanger 	=	'#d9534f';
+// var AsciiLARRY3D		=	true;
+// var AsciiIMPOSSIBLE	=	true;
+// var AsciiSLANT		=	true;
+// var AsciiBULB		=	true;
+// var AsciiLEAN		=	true;
 
 // =======================================================================
 // Load Canvas
 // =======================================================================
-paper.view.center = view.center;
+	// paper.view.center = view.center;
 
-
-
+// =======================================================================
+//         _____  ____   __     ___    _____  __  __               
+//        / ___/ / __ \ / /    /   |  / ___/ / / / /               
+//        \__ \ / /_/ // /    / /| |  \__ \ / /_/ /                
+//       ___/ // ____// /___ / ___ | ___/ // __  /                 
+//      /____//_/    /_____//_/  |_|/____//_/ /_/                  
+//      ___     _   __ ____ __  ___ ___   ______ ____ ____   _   __
+//     /   |   / | / //  _//  |/  //   | /_  __//  _// __ \ / | / /
+//    / /| |  /  |/ / / / / /|_/ // /| |  / /   / / / / / //  |/ / 
+//   / ___ | / /|  /_/ / / /  / // ___ | / /  _/ / / /_/ // /|  /  
+//  /_/  |_|/_/ |_//___//_/  /_//_/  |_|/_/  /___/ \____//_/ |_/   
+//                                                         
 // =======================================================================
 // Draw the Splash Animation
 // =======================================================================
@@ -50,20 +89,32 @@ var star = new Path.Circle(new Point(view.center), 100);
 			fillColor: 'rgb(168, 121, 84)',
 			strokeColor: null};
 
-		var group1 = new Group([moonGroup1, moonGroup1a])
-		var group2 = new Group([moonGroup2, moonGroup2a])
-		var group3 = new Group([moonGroup3, moonGroup3a])
+		var group1 = new Group([moonGroup1, moonGroup1a]);
+		var group2 = new Group([moonGroup2, moonGroup2a]);
+		var group3 = new Group([moonGroup3, moonGroup3a]);
 
 		var point1 = moonGroup1.center;
 		// var point2 = copy.bounds.bottomLeft;
 
 		function onFrame(event){
-			group1.rotate(0.5, point1)
-			group2.rotate(2, point1)
-			group3.rotate(1, point1)
+			group1.rotate(0.5, point1);
+			group2.rotate(2, point1);
+			group3.rotate(1, point1);
 			// group.fillColor.hue = Math.random() * 50.5°;
 		}
 
+// =======================================================================
+//         ____   ____   ___  _       __                  
+//        / __ \ / __ \ /   || |     / /                  
+//       / / / // /_/ // /| || | /| / /                   
+//      / /_/ // _, _// ___ || |/ |/ /                    
+//     /_____//_/ |_|/_/  |_||__/|__/                     
+//    ______ ____ __  ___ ______ __     ____ _   __ ______
+//   /_  __//  _//  |/  // ____// /    /  _// | / // ____/
+//    / /   / / / /|_/ // __/  / /     / / /  |/ // __/   
+//   / /  _/ / / /  / // /___ / /___ _/ / / /|  // /___   
+//  /_/  /___//_/  /_//_____//_____//___//_/ |_//_____/   
+//                                                          
 // =======================================================================
 // Draw canvas elements onClick of $('.go')
 // =======================================================================
@@ -88,74 +139,126 @@ $('.go').click(function(){
 // =======================================
 // Take date inputs and draw the timeline
 // =======================================
-	$('.dateRange').addClass('activated');
-	$('.dataPoint').addClass('activated');
-	project.clear();
+
 	startYearString = $('.startYear').val();
 	endYearString = $('.endYear').val();
-
 	var startYear = parseInt(startYearString);
 	var endYear = parseInt(endYearString);
 	var dateRange = (endYear - startYear);
 
+	checkInitialInputs()
 
-// =======================================================================
-console.log('%cThe span of dates being viewed is ' + (dateRange - 1) + ' years.', 'font-size:20px;color:green');
-console.log('%cStartYear is ' + startYear, 'font-size:20px;color:green')
-// =======================================================================
-	// // OLD SOLUTION
-	// for (var a = 0; a <= dateRange + 1; a++) {
-	// 		// var d = new Point(i / dateRange, 1) * (view.size -= 50);
-	// 			date = path.add(new Point(a / dateRange, 1) * (view.size -=55));
-	// 			var dateList = new PointText(new Point(a / dateRange, 1) * (view.size -= 50));
-	// 				dateList.content = (startYear += 1);
-	// 				// dateList.style = style;
-	// 				// dateList.fontSize = 500 / dateRange;
-	// 				dateList.rotate(270);
-	// 				// console.log(date.segment);
-	// };
-	// for (var b = 0; b <= dateRange; b++) {
-	// 	var dataPointRect = new Rectangle(view.size / b, 10);
-	// 	var dataPointPath = new Path.Rectangle(dataPointRect);
-	// 		dataPointPath.style = style;
-	// 	// console.log(dataPointPath.position);
-	// };
+	// =====================================
+	//          ___ _           __       
+	//         / _/(_)____ ___ / /_      
+	//        / _// // __/(_-</ __/      
+	//       /_/ /_//_/  /___/\__/    __ 
+	//      ___ _    __ (_)/ /_ ____ / / 
+	//     (_-<| |/|/ // // __// __// _ \
+	//    /___/|__,__//_/ \__/ \__//_//_/
+	//   ____ ___ _ ___ ___              
+	//  / __// _ `/(_-</ -_)             
+	//  \__/ \_,_//___/\__/              
+	//                                   
+	function checkInitialInputs(){
+		switch (true) {
+			case (startYear >= endYear):
+				$('.notification-text').html('START YEAR should come before END YEAR.')
+				$('.notification-text').addClass('activated');
+				$('.start-year').addClass('has-error');
+				$('.end-year').addClass('has-error');
+			break;
 
-	// // MASON'S SOLUTION
-	// for (var i = 0; i < 10; i++) {
-	// 		var dateList = new PointText(new Point(view.size / i, 200));
-	// 		dateList.content = (i);
-	// 		dateList.style = style;
-	// 		dateList.rotate(270)
-	// }
+			case (startYearString.trim() == ""):
+				$('.notification-text').html('Need START YEAR.')
+				// $('.notification-text').addClass('activated');
+				// $('.start-year').addClass('has-error');
+				// $('.end-year').removeClass('has-error');
+				initialStartHasError();
+			break;
 
+			case (endYearString.trim() == ""):
+				$('.notification-text').html('Need END YEAR.')
+				// $('.notification-text').addClass('activated');
+				// $('.end-year').addClass('has-error');
+				// $('.start-year').removeClass('has-error');
+				initialEndHasError();
+			break;
 
-	// // NEW SOLUTION
-	var width, height, center;
-	var points = 10;
-	var smooth = true;
-	var path = new Path();
-	var referencePath = new Path();
-	var mousePos = view.center / 2;
-	var pathHeight = mousePos.y;
-		// path.fillColor = 'black';
-		path.strokeWidth = 3;
-		path.strokeColor = brandDanger;
-		initializePath();
+			case (startYear < 1000):;
+				$('.notification-text').html('Year needs to match YYYY')
+				// $('.notification-text').addClass('activated');
+				// $('.start-year').addClass('has-error');
+				// $('.end-year').removeClass('has-error');
+				initialStartHasError();
+			break;
 
-	function initializePath() {
-		center = view.center;
-		width = view.size.width;
-		height = view.size.height / 2
-		path.segments = [];
-		path.add([view.bounds.left,(view.bounds.bottom - 50)]);
-		for (var i = 1; i < dateRange; i++) {
-			var point = new Point(width / dateRange * i, (view.bounds.bottom - 50));
-			path.add(point);
+			case (endYear < 1000):
+				$('.notification-text').html('Year needs to match YYYY')
+				// $('.notification-text').addClass('activated');
+				// $('.end-year').addClass('has-error');
+				// $('.start-year').removeClass('has-error');
+				initialEndHasError();
+			break;
+
+			default:
+			$('.notification-text').removeClass('activated');
+			$('.start-year').removeClass('has-error');
+			$('.end-year').removeClass('has-error');
+			initializePath();
 		}
-			path.add([view.bounds.right,(view.bounds.bottom - 50)]);
-			// path.fullySelected = true;
-			initializePointText();
+	}
+
+	function initialStartHasError (){
+		$('.notification-text').addClass('activated');
+		$('.start-year').addClass('has-error');
+		$('.end-year').removeClass('has-error');
+	}
+
+	function initialEndHasError (){
+		$('.notification-text').addClass('activated');
+		$('.end-year').addClass('has-error');
+		$('.start-year').removeClass('has-error');
+	}
+
+
+	// =======================================================================
+	console.log('%cThe span of dates being viewed is ' + (dateRange - 1) + ' years.', 'font-size:20px;color:green');
+	console.log('%cStartYear is ' + startYear, 'font-size:20px;color:green')
+	// =======================================================================
+	var width, height, center;
+
+	// NEW SOLUTION
+	function initializePath() {
+		// =======================================
+		// Clear the Splash Animation
+		// =======================================
+			project.clear();
+		// =======================================
+		// Replace initial inputs with new inputs
+		// =======================================
+		$('.dateRange').addClass('activated');
+		$('.dataPoint').addClass('activated');
+		// =======================================
+		// Take date inputs and draw the timeline
+		// =======================================
+		var path = new Path();
+		var referencePath = new Path();
+			path.strokeWidth = 3;
+			path.strokeColor = '#d9534f';
+
+			center = view.center;
+			width = view.size.width;
+			height = view.size.height / 2
+			path.segments = [];
+			path.add([view.bounds.left,(view.bounds.bottom - 50)]);
+			for (var i = 1; i < dateRange; i++) {
+				var point = new Point(width / dateRange * i, (view.bounds.bottom - 50));
+				path.add(point);
+			}
+				path.add([view.bounds.right,(view.bounds.bottom - 50)]);
+				// path.fullySelected = true;
+				initializePointText();
 	}
 
 	function initializePointText(){
@@ -181,32 +284,66 @@ console.log('%cStartYear is ' + startYear, 'font-size:20px;color:green')
 				// referencePath.strokeWidth = '5';
 			}
 	}
-
-// =========================
-// Redraw canvas after click
-// =========================
+	// =======================================================================
+	//                         __                  
+	//      ____ ___  ____ ___/ /____ ___ _ _    __
+	//     / __// -_)/___// _  // __// _ `/| |/|/ /
+	//    /_/   \__/      \_,_//_/   \_,_/ |__,__/ 
+	//   ____ ___ _ ___  _  __ ___ _ ___           
+	//  / __// _ `// _ \| |/ // _ `/(_-<           
+	//  \__/ \_,_//_//_/|___/ \_,_//___/           
+	//                                             
+	// =========================
+	// Redraw canvas after click
+	// =========================
 	paper.view.draw();
 
 
-
-
+// =======================================================================
+//		     ____   ____   ___  _       __                                       
+//		    / __ \ / __ \ /   || |     / /                                       
+//		   / / / // /_/ // /| || | /| / /                                        
+//		  / /_/ // _, _// ___ || |/ |/ /                                         
+//		 /_____//_/ |_|/_/  |_||__/|__/                                          
+//      ____   ___   ______ ___       ____   ____   ____ _   __ ______ _____
+//     / __ \ /   | /_  __//   |     / __ \ / __ \ /  _// | / //_  __// ___/
+//    / / / // /| |  / /  / /| |    / /_/ // / / / / / /  |/ /  / /   \__ \ 
+//   / /_/ // ___ | / /  / ___ |   / ____// /_/ /_/ / / /|  /  / /   ___/ / 
+//  /_____//_/  |_|/_/  /_/  |_|  /_/     \____//___//_/ |_/  /_/   /____/  
+//                                                                          
 // ADD NEW DATA POINT
 // =======================================================================
 	$('.add').click(function(){
-// =============================================
-	width = view.size.width;
-// Set clickNum to 50, and each time $('.add') is clicked, +50 to clickNum
-clickNums()
+	// =============================================
+	//                            __ 
+	//      ____ ___  __ __ ___  / /_
+	//     / __// _ \/ // // _ \/ __/
+	//     \__/ \___/\_,_//_//_/\__/ 
+	//         __ _       __         
+	//   ____ / /(_)____ / /__ ___   
+	//  / __// // // __//  '_/(_-<   
+	//  \__//_//_/ \__//_/\_\/___/   
+	//                               
+	// Set clickNum to 50, and each time $('.add') is clicked, +50 to clickNum
+	clickNums()
 	function clickNums () {
 		clickNum = $(this).data('clickNum');
 			if (!clickNum) clickNum = 50;
 				$(this).data('clickNum', clickNum += 20);
-		checkInputs()
+		checkInputs();
 	}
-// =============================================
 
+	// ====================================================
+	//       _                   __                      
+	//      (_)___   ___  __ __ / /_                     
+	//     / // _ \ / _ \/ // // __/                     
+	//    /_//_//_// .__/\_,_/ \__/                      
+	//            /_/ __ _     __       __   _           
+	//   _  __ ___ _ / /(_)___/ /___ _ / /_ (_)___   ___ 
+	//  | |/ // _ `// // // _  // _ `// __// // _ \ / _ \
+	//  |___/ \_,_//_//_/ \_,_/ \_,_/ \__//_/ \___//_//_/
+	//                                                   
 	function checkInputs() {
-
 
 		// console.clear();
 		$('.dateRange').addClass('activated');
@@ -220,98 +357,135 @@ clickNums()
 				dataPointRange		= dataPointEnd - dataPointStart;
 				checkName()
 
+
 		function checkName () {
+			// Use clickNum to change Y location of data point
+			// =============================================
 			if(dataPointName.trim() == "") { // note the trim for eliminating empty spaces
-				alert('Please enter a name of your new data point.');
-				// return;
-				} else { checkInputs() }
+				$(this).data('clickNum', clickNum -= 20);
+					$('.notification-text').html('Please enter a name of your new data point.');
+					$('.notification-text').addClass('activated');
+					$('.data-point-name').addClass('has-error');
+					$('.data-point-start').removeClass('has-error');
+					$('.data-point-end').removeClass('has-error');
+				} else { 
+					checkInputs();
+					$('.data-point-name').removeClass('has-error');
+				}
 			}
 
-		// function checkStart () {
-		// 	if(dataPointStartString.trim() == "") {
-		// 		alert('Need beginning year.');
-		// 		// return;
-		// 		} else if(dataPointStart < 1000) {
-		// 			alert('Year needs to match YYYY')
-		// 			} else if(dataPointStart < startYear) {
-		// 				alert('START should be after the graph\'s start year.')
-		// 				} else if(dataPointStart > dataPointEnd) {
-		// 					alert('START needs to be a year before END')
-		// 					} else { checkEnd() }
-		// 		}
-
-		// function checkEnd () {
-		// 	if(dataPointEndString.trim() == "") {
-		// 		alert('Need ending year.');
-		// 		// return;
-		// 		} else if(dataPointEnd < 1000) {
-		// 			alert('END needs to match YYYY')
-		// 			} else if(dataPointEnd > endYear) {
-		// 				alert('END should be before the graph\'s end year.')
-		// 				} else { renderData() }
-		// 			}
-
+		// =====================================
+		//                                      __
+		//         ___ ___  ____ ___   ___  ___/ /
+		//        (_-</ -_)/ __// _ \ / _ \/ _  / 
+		//       /___/\__/ \__/ \___//_//_/\_,_/  
+		//      ___ _    __ (_)/ /_ ____ / /      
+		//     (_-<| |/|/ // // __// __// _ \     
+		//    /___/|__,__//_/ \__/ \__//_//_/     
+		//   ____ ___ _ ___ ___                   
+		//  / __// _ `/(_-</ -_)                  
+		//  \__/ \_,_//___/\__/                   
+		//
 		function checkInputs(){
 			switch (true)
 				{
-				// Check Start Input
-				// =============================================
-				case (dataPointStartString.trim() == ""):
-				alert('Need beginning year.');
+				// =========================================================
+				// Check End Input First, because of a bug if start is first
+				// =========================================================
+				case (dataPointEnd < 1000):
 				$(this).data('clickNum', clickNum -= 20);
+					$('.notification-text').html('END needs to match YYYY');
+					endHasError();
 				break;
-					case (dataPointStart < 1000):
-					alert('Year needs to match YYYY');
-					$(this).data('clickNum', clickNum -= 20);
-					break;
-						case (dataPointStart < startYear):
-						alert('START should be after the graph\'s start year.');
-						$(this).data('clickNum', clickNum -= 20);
-						break;
-							case (dataPointStart > dataPointEnd):
-							alert('START needs to be a year before END');
-							$(this).data('clickNum', clickNum -= 20);
-							break;
-				// =============================================
 
-				// Check End Input
-				// =============================================
 				case (dataPointEndString.trim() == ""):
-				alert('Need ending year.');
 				$(this).data('clickNum', clickNum -= 20);
+					$('.notification-text').html('Need END year.')
+					endHasError();
 				break;
-					case (dataPointEnd < 1000):
-					alert('END needs to match YYYY');
-					$(this).data('clickNum', clickNum -= 20);
-					break;
-						case (dataPointEnd > endYear):
-						alert('END should be before the graph\'s end year.');
-						$(this).data('clickNum', clickNum -= 20);
-						break;
-							// case ():
-							// // statement
-							// break;
+
+				case (dataPointEnd > endYear):
+				$(this).data('clickNum', clickNum -= 20);
+					$('.notification-text').html('END should be before the graph\'s end year.');
+					endHasError();
+				break;
+				// =========================================================
+				// Check Start Input
+				// =========================================================
+				case (dataPointStartString.trim() == ""):
+				$(this).data('clickNum', clickNum -= 20);
+					$('.notification-text').html('Need beginning year.');
+					startHasError();
+				break;
+
+				case (dataPointStart < 1000):
+				$(this).data('clickNum', clickNum -= 20);
+					$('.notification-text').html('Year needs to match YYYY');
+					startHasError();
+				break;
+
+				case (dataPointStart < startYear):
+				$(this).data('clickNum', clickNum -= 20);
+					$('.notification-text').html('START should be after the graph\'s start year.');
+					startHasError()
+				break;
+
+				case (dataPointStart > dataPointEnd):
+				$(this).data('clickNum', clickNum -= 20);
+					$('.notification-text').html('START needs to be a year before END');
+					startHasError();
+					$('.data-point-end').addClass('has-error');
+				break;
+				// case ():
+				// // statement
+				// break;
 				// =============================================
-				default: 
-				renderData();
+				default:
+					$('.notification-text').removeClass('activated');
+					$('.data-point-start').removeClass('has-error');
+					$('.data-point-name').removeClass('has-error');
+					$('.data-point-end').removeClass('has-error');
+					renderData();
 				}
 			}
+
 		}
 
+			// ========================================================
+			// Functions for adding and removing classes for validation
+			// ========================================================
+			function startHasError (){
+				$('.notification-text').addClass('activated');
+				$('.data-point-start').addClass('has-error');
+				$('.data-point-name').removeClass('has-error');
+				$('.data-point-end').removeClass('has-error');
+			}
+
+			function endHasError (){
+				$('.notification-text').addClass('activated');
+				$('.data-point-end').addClass('has-error');
+				$('.data-point-name').removeClass('has-error');
+				$('.data-point-start').removeClass('has-error');
+			}
 
 
-
-
-	// function dataInputs () {
+		// ========================================================
+		//                         __                             
+		//      ____ ___  ___  ___/ /___  ____   ___  ___  _    __
+		//     / __// -_)/ _ \/ _  // -_)/ __/  / _ \/ -_)| |/|/ /
+		//    /_/   \__//_//_/\_,_/ \__//_/    /_//_/\__/ |__,__/ 
+		//       __       __          ___         _       __      
+		//   ___/ /___ _ / /_ ___ _  / _ \ ___   (_)___  / /_     
+		//  / _  // _ `// __// _ `/ / ___// _ \ / // _ \/ __/     
+		//  \_,_/ \_,_/ \__/ \_,_/ /_/    \___//_//_//_/\__/      
+		//                                                        
 		function renderData(){
+		$('.notification-text').removeClass('activated');
 		console.log(clickNum)
-
-
-		// Use clickNum to change Y location of data point
-		// =============================================
+		width = view.size.width;
 		var dataPointRangeCounter = dataPointRange;
 		var dataPointRect = new Rectangle(
-							new Point((width / dateRange) * (dataPointStart - startYear), (view.bounds.bottom - clickNum)), 
+							new Point((width / dateRange) * (dataPointStart - startYear), (view.bounds.bottom - clickNum)),
 							new Size(((width / dateRange) * dataPointRange), 14)
 							);
 
@@ -325,29 +499,25 @@ clickNums()
 		var dataPointNameListing = new PointText(0, (view.bounds.bottom - clickNum));
 			dataPointNameListing.content = dataPointName;
 			dataPointNameListing.fillColor = 'white';
-			// dataPointNameListing.rotate(300);
-			// dataPointNameListing.position.x -=14;
 			dataPointNameListing.position.y +=11;
-
-// ================================================================================================
-		console.log('%cData Start = ' + dataPointStart, 'font-size:20px;background-color:yellow');
-		console.log('%cData End = ' + dataPointEnd, 'font-size:20px;background-color:yellow');
-		console.log('%cDifference = ' + dataPointRange, 'font-size:20px;background-color:yellow;');
-// ================================================================================================
-// =================================================
-		// // CLEAR INPUT FIELDS FOR NEW DATAPOINT
-		// $('.dataPoint-start-input').val('');
-		// $('.dataPoint-end-input').val('');
-// =================================================
-// Redraw canvas after click
-// =========================
-	paper.view.draw();
-// =========================
+		// ================================================================================================
+			console.log('%cData Start = ' + dataPointStart, 'font-size:20px;background-color:yellow');
+			console.log('%cData End = ' + dataPointEnd, 'font-size:20px;background-color:yellow');
+			console.log('%cDifference = ' + dataPointRange, 'font-size:20px;background-color:yellow;');
+		// ================================================================================================
+		// CLEAR INPUT FIELDS FOR NEW DATAPOINT
+		// =================================================
+			$('.dataPoint-name-input').val('');
+			$('.dataPoint-start-input').val('');
+			$('.dataPoint-end-input').val('');
+		// =================================================
+		// Redraw canvas after click
+		// =========================
+			paper.view.draw();
+		// =========================
 		}
-	// }
 	});
 });
-
 
 // =======================================================================
 	function onResize(event) {

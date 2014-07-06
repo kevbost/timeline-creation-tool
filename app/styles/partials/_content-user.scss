@@ -57,7 +57,14 @@ a {
 	width: 100%;
 	max-height: 600px;
 	background-color: $gray-darker;
+	&.activated {
+		width: 100%;
+		max-height: 1300px;
+		background-color: $gray-darker;
+	}
 }
+
+
 
 // =======================================================================
 

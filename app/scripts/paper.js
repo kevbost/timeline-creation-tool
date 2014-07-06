@@ -321,7 +321,7 @@ $('.go').click(function(){
 	function initializeReferencePath() {
 		for (var i = 1; i < dateRange; i++) {
 		var from = new Point(width / dateRange * i, 0);
-		var to = new Point(width / dateRange * i,(view.bounds.bottom - 50));
+		var to = new Point(width / dateRange * i,(view.bounds.bottom - 52));
 			var referencePath = new Path.Line(from, to);
 				referencePath.style = style;
 				referencePath.strokeColor = 'black';
@@ -545,15 +545,16 @@ $('.go').click(function(){
 			dataPointNameListing.fillColor = 'white';
 			dataPointNameListing.position.y +=11;
 		// ================================================================================================
-			console.log('%cData Start = ' + dataPointStart, 'font-size:20px;background-color:yellow');
-			console.log('%cData End = ' + dataPointEnd, 'font-size:20px;background-color:yellow');
+			console.log('%cName = ' + dataPointName, 'font-size:20px;background-color:yellow');
+			console.log('%cStart = ' + dataPointStart, 'font-size:20px;background-color:yellow');
+			console.log('%cEnd = ' + dataPointEnd, 'font-size:20px;background-color:yellow');
 			console.log('%cDifference = ' + dataPointRange, 'font-size:20px;background-color:yellow;');
 		// ================================================================================================
 		// CLEAR INPUT FIELDS FOR NEW DATAPOINT
 		// =================================================
-			$('.dataPoint-name-input').val('');
-			$('.dataPoint-start-input').val('');
-			$('.dataPoint-end-input').val('');
+			// $('.dataPoint-name-input').val('');
+			// $('.dataPoint-start-input').val('');
+			// $('.dataPoint-end-input').val('');
 		// =================================================
 		// Redraw canvas after click
 		// =========================
@@ -597,6 +598,12 @@ $('.go').click(function(){
 //                                                                                      
 
 $('.scifi').click(function(){
+		if (scifi.results.length > 27) {
+	  		$('#myCanvas').css('max-height', "1300px")
+	  		$( "#myCanvas" ).prop( "height", "1300" );
+	  		$( "#myCanvas" ).addClass( "activated" );
+	  		view.size.height = 1300;
+	  	}
 		// 27 media events is the current cap limit
 		startYearString = $('.startYear').val('1959');
 		endYearString = $('.endYear').val('2017');
@@ -605,10 +612,13 @@ $('.scifi').click(function(){
 		var dateRange = (endYear - startYear);
 	$( ".go" ).click();
 	  // comparator: function( Photo ) { return Photo.get('_id')}
-		for (i = 0; i < events.media.tv.length; i++) {
-			TVname = events.media.tv[i].name
-			TVstart = events.media.tv[i].start
-			TVend = events.media.tv[i].end
+		for (i = 0; i < scifi.results.length; i++) {
+			// TVname = events.media.tv[i].name
+			// TVstart = events.media.tv[i].start
+			// TVend = events.media.tv[i].end
+			TVname = scifi.results[i].name
+			TVstart = scifi.results[i].start
+			TVend = scifi.results[i].end
 			dataPointName 			= $('.dataPoint-name-input').val(TVname);
 			dataPointStartString 	= $('.dataPoint-start-input').val(TVstart);
 			dataPointEndString 		= $('.dataPoint-end-input').val(TVend);
@@ -617,4 +627,7 @@ $('.scifi').click(function(){
 			$('.dataPoint-start-input').val('');
 			$('.dataPoint-end-input').val('');
 		}
+		console.log(view.size.width)
+			  	paper.view.draw();
+
 })

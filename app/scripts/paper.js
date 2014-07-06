@@ -44,6 +44,7 @@ console.log('%cCanvas height is ' + view.size.height, 'font-size:20px;background
 // var AsciiSLANT		=	true;
 // var AsciiBULB		=	true;
 // var AsciiLEAN		=	true;
+// var AsciiMODULAR		=	true;
 
 // =======================================================================
 // Load Canvas
@@ -73,6 +74,7 @@ var star = new Path.Circle(new Point(view.center), 100);
 	var moonGroup1a = new Path.Circle(new Point(view.center + 800), 25);
 		moonGroup1a.style = {
 			fillColor: 'rgb(86, 75, 146)',
+			// fillColor: 'transparent',
 			strokeColor: null};
 
 	var moonGroup2 = new Path.Circle(new Point(view.center), 200);
@@ -80,26 +82,68 @@ var star = new Path.Circle(new Point(view.center), 100);
 	var moonGroup2a = new Path.Circle(new Point(view.center + 100), 5);
 		moonGroup2a.style = {
 			fillColor: 'rgb(200, 192, 62)',
+			// fillColor: 'white',
 			strokeColor: null};
 
 	var moonGroup3 = new Path.Circle(new Point(view.center), 200);
-	// moonGroup2.style = {strokeColor: 'black'}
+	// moonGroup3.style = {strokeColor: 'black'}
 	var moonGroup3a = new Path.Circle(new Point(view.center - 200), 5);
 		moonGroup3a.style = {
-			fillColor: 'rgb(168, 121, 84)',
+			fillColor: 'rgb(69, 0, 245)',
+			// fillColor: 'white',
 			strokeColor: null};
 
-		var group1 = new Group([moonGroup1, moonGroup1a]);
+	var moonGroup4 = new Path.Circle(new Point(view.center), 200);
+	// moonGroup4.style = {strokeColor: 'black'}
+	var moonGroup4a = new Path.Circle(new Point(view.center + 200), 5);
+		moonGroup4a.style = {
+			fillColor: 'rgb(18, 121, 4)',
+			// fillColor: 'white',
+			strokeColor: null};
+
+	var moonGroup5 = new Path.Circle(new Point(view.center), 200);
+	// moonGroup5.style = {strokeColor: 'black'}
+	var moonGroup5a = new Path.Circle(new Point(view.center + 140), 5);
+		moonGroup5a.style = {
+			fillColor: 'rgb(168, 101, 54)',
+			// fillColor: 'white',
+			strokeColor: null};
+
+	var moonGroup6 = new Path.Circle(new Point(view.center), 200);
+	// moonGroup6.style = {strokeColor: 'black'}
+	var moonGroup6a = new Path.Circle(new Point(view.center + 300), 10);
+		moonGroup6a.style = {
+			fillColor: 'rgb(168, 11, 54)',
+			// fillColor: 'white',
+			strokeColor: null};
+
+	var moonGroup7 = new Path.Circle(new Point(view.center), 250);
+	// moonGroup2.style = {strokeColor: 'black'}
+	var moonGroup7a = new Path.Circle(new Point(view.center - 400), 10);
+		moonGroup7a.style = {
+			fillColor: 'rgb(168, 11, 255)',
+			// fillColor: 'white',
+			strokeColor: null};
+
+		// var group1 = new Group([moonGroup1, moonGroup1a]);
 		var group2 = new Group([moonGroup2, moonGroup2a]);
 		var group3 = new Group([moonGroup3, moonGroup3a]);
+		var group4 = new Group([moonGroup4, moonGroup4a]);
+		var group5 = new Group([moonGroup5, moonGroup5a]);
+		var group6 = new Group([moonGroup6, moonGroup6a]);
+		var group7 = new Group([moonGroup7, moonGroup7a]);
 
 		var point1 = moonGroup1.center;
 		// var point2 = copy.bounds.bottomLeft;
 
 		function onFrame(event){
-			group1.rotate(0.5, point1);
-			group2.rotate(2, point1);
+			// group1.rotate(0.5, point1);
+			group2.rotate(3, point1);
 			group3.rotate(1, point1);
+			group4.rotate(1, point1);
+			group5.rotate(1.5, point1);
+			group6.rotate(0.8, point1);
+			group7.rotate(0.6, point1);
 			// group.fillColor.hue = Math.random() * 50.5°;
 		}
 
@@ -527,27 +571,50 @@ $('.go').click(function(){
 	}
 // =======================================================================
 
-//    .-')     ('-.     ('-.        .-. .-')    ('-.                         (`\ .-') /`   
-//   ( OO ). _(  OO)  _(  OO)       \  ( OO ) _(  OO)                         `.( OO ),'   
-//  (_)---\_|,------.(,------.       ;-----.\(,------.,--.     .-'),-----. ,--./  .--.     
-//  /    _ | |  .---' |  .---'       | .-.  | |  .---'|  |.-')( OO'  .-.  '|      |  |     
-//  \  :` `. |  |     |  |           | '-' /_)|  |    |  | OO )   |  | |  ||  |   |  |,    
-//   '..`''.||  '--. (|  '--.        | .-. `.(|  '--. |  |`-' \_) |  |\|  ||  |.'.|  |_)   
-//  .-._)   \|  .--'  |  .--'        | |  \  ||  .--'(|  '---.' \ |  | |  ||         |     
-//  \       /|  `---. |  `---.       | '--'  /|  `---.|      |   `'  '-'  '|   ,'.   |     
-//   `-----' `------' `------'       `------' `------'`------'     `-----' '--'   '--'     
-//    .-')     ('-.     ('-.           ('-.    .-. .-')                    (`-.     ('-.   
-//   ( OO ). _(  OO)  _(  OO)         ( OO ).-.\  ( OO )                 _(OO  )_ _(  OO)  
-//  (_)---\_|,------.(,------.        / . --. / ;-----.\ .-'),-----. ,--(_/   ,. (,------. 
-//  /    _ | |  .---' |  .---'        | \-.  \  | .-.  |( OO'  .-.  '\   \   /(__/|  .---' 
-//  \  :` `. |  |     |  |          .-'-'  |  | | '-' /_)   |  | |  | \   \ /   / |  |     
-//   '..`''.||  '--. (|  '--.        \| |_.'  | | .-. `.\_) |  |\|  |  \   '   /,(|  '--.  
-//  .-._)   \|  .--'  |  .--'         |  .-.  | | |  \  | \ |  | |  |   \     /__)|  .--'  
-//  \       /|  `---. |  `---.        |  | |  | | '--'  /  `'  '-'  '    \   /    |  `---. 
-//   `-----' `------' `------'        `--' `--' `------'     `-----'      `-'     `------' 
-//     _              _   _   _                                  _   _     _       
-//    / \   _ __   __| | | |_| |__   ___ _ __    ___  ___  ___  | |_| |__ (_)___ _ 
-//   / _ \ | '_ \ / _` | | __| '_ \ / _ | '_ \  / __|/ _ \/ _ \ | __| '_ \| / __(_)
-//  / ___ \| | | | (_| | | |_| | | |  __| | | | \__ |  __|  __/ | |_| | | | \__ \_ 
-// /_/   \_|_| |_|\__,_|  \__|_| |_|\___|_| |_| |___/\___|\___|  \__|_| |_|_|___(_)
-// This is my breakdown of the data i cant figure out. (ie: x)
+
+//   ____    ____    ______   ____    __  __  ____     ____                            
+//  /\  _`\ /\  _`\ /\__  _\ /\  _`\ /\ \/\ \/\  _`\  /\  _`\                          
+//  \ \,\L\_\ \ \/\_\/_/\ \/ \ \ \L\_\ \ `\\ \ \ \/\_\\ \ \L\_\                        
+//   \/_\__ \\ \ \/_/_ \ \ \  \ \  _\L\ \ , ` \ \ \/_/_\ \  _\L                        
+//     /\ \L\ \ \ \L\ \ \_\ \__\ \ \L\ \ \ \`\ \ \ \L\ \\ \ \L\ \                      
+//     \ `\____\ \____/ /\_____\\ \____/\ \_\ \_\ \____/ \ \____/                      
+//      \/_____/\/___/  \/_____/ \/___/  \/_/\/_/\/___/   \/___/                       
+//           ____    ______   ____    ______  ______   _____   __  __                  
+//          /\  _`\ /\__  _\ /\  _`\ /\__  _\/\__  _\ /\  __`\/\ \/\ \                 
+//          \ \ \L\_\/_/\ \/ \ \ \/\_\/_/\ \/\/_/\ \/ \ \ \/\ \ \ `\\ \                
+//           \ \  _\/  \ \ \  \ \ \/_/_ \ \ \   \ \ \  \ \ \ \ \ \ , ` \               
+//            \ \ \/    \_\ \__\ \ \L\ \ \ \ \   \_\ \__\ \ \_\ \ \ \`\ \              
+//             \ \_\    /\_____\\ \____/  \ \_\  /\_____\\ \_____\ \_\ \_\             
+//              \/_/    \/_____/ \/___/    \/_/  \/_____/ \/_____/\/_/\/_/             
+//                 ______  ______            ____    __     ______   __  __  ____      
+//                /\__  _\/\__  _\   /'\_/`\/\  _`\ /\ \   /\__  _\ /\ \/\ \/\  _`\    
+//                \/_/\ \/\/_/\ \/  /\      \ \ \L\_\ \ \  \/_/\ \/ \ \ `\\ \ \ \L\_\  
+//                   \ \ \   \ \ \  \ \ \__\ \ \  _\L\ \ \  __\ \ \  \ \ , ` \ \  _\L  
+//                    \ \ \   \_\ \__\ \ \_/\ \ \ \L\ \ \ \L\ \\_\ \__\ \ \`\ \ \ \L\ \
+//                     \ \_\  /\_____\\ \_\\ \_\ \____/\ \____//\_____\\ \_\ \_\ \____/
+//                      \/_/  \/_____/ \/_/ \/_/\/___/  \/___/ \/_____/ \/_/\/_/\/___/ 
+//                                                                                     
+//                                                                                      
+
+$('.scifi').click(function(){
+		// 27 media events is the current cap limit
+		startYearString = $('.startYear').val('1959');
+		endYearString = $('.endYear').val('2017');
+		var startYear = parseInt(startYearString);
+		var endYear = parseInt(endYearString);
+		var dateRange = (endYear - startYear);
+	$( ".go" ).click();
+	  // comparator: function( Photo ) { return Photo.get('_id')}
+		for (i = 0; i < events.media.tv.length; i++) {
+			TVname = events.media.tv[i].name
+			TVstart = events.media.tv[i].start
+			TVend = events.media.tv[i].end
+			dataPointName 			= $('.dataPoint-name-input').val(TVname);
+			dataPointStartString 	= $('.dataPoint-start-input').val(TVstart);
+			dataPointEndString 		= $('.dataPoint-end-input').val(TVend);
+		$('.add').click()
+			$('.dataPoint-name-input').val('');
+			$('.dataPoint-start-input').val('');
+			$('.dataPoint-end-input').val('');
+		}
+})

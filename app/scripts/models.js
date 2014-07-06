@@ -1,9 +1,9 @@
-// 'use strict';
+'use strict';
 
-// var Main = Parse.Object.extend({
-// 	className: 'Main'
-// });
+var Scifi = Parse.Object.extend({
+	className: 'Scifi'
+});
 
-// var PhotoCollection = Parse.Collection.extend({
-// 	model: Main
-// });
+var ScifiCollection = Parse.Collection.extend({
+	model: Scifi
+});

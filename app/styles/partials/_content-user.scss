@@ -49,6 +49,8 @@ a {
 
 .jumbotron	{
 	// height: 500px;
+	// overflow: scroll;
+
 }
 
 // =======================================================================
@@ -56,6 +58,7 @@ a {
 #myCanvas {
 	width: 100%;
 	max-height: 600px;
+	// height: 100%;
 	background-color: $gray-darker;
 	&.activated {
 		width: 100%;

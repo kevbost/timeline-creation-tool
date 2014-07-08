@@ -77,6 +77,7 @@ var star = new Path.Circle(new Point(view.center), 100);
 			// fillColor: 'transparent',
 			strokeColor: null};
 
+	// new moonGroup1
 	var moonGroup2 = new Path.Circle(new Point(view.center), 200);
 	// moonGroup2.style = {strokeColor: 'black'}
 	var moonGroup2a = new Path.Circle(new Point(view.center + 100), 5);
@@ -372,8 +373,9 @@ $('.go').click(function(){
 	clickNums()
 	function clickNums () {
 		clickNum = $(this).data('clickNum');
-			if (!clickNum) clickNum = 50;
-				$(this).data('clickNum', clickNum += 20);
+		console.log(clickNum)
+		if (!clickNum) clickNum = -19;
+		$(this).data('clickNum', clickNum += 20);
 		checkInputs();
 	}
 
@@ -529,18 +531,19 @@ $('.go').click(function(){
 		width = view.size.width;
 		var dataPointRangeCounter = dataPointRange;
 		var dataPointRect = new Rectangle(
-							new Point((width / dateRange) * (dataPointStart - startYear), (view.bounds.bottom - clickNum)),
-							new Size(((width / dateRange) * dataPointRange), 14)
+							new Point((width / dateRange) * (dataPointStart - startYear), (view.bounds.top + clickNum)),
+							new Size(((width / dateRange) * dataPointRange), 20)
 							);
 
 							var path = new Path.Rectangle(dataPointRect);
 								path.fillColor = {
-								hue: Math.random() * 360,
-								saturation: 1,
-								brightness: 1
+									hue: Math.random() * 360,
+									saturation: 1,
+									brightness: 1
 								};
+								// path.fillColor = 'white';
 
-		var dataPointNameListing = new PointText(0, (view.bounds.bottom - clickNum));
+		var dataPointNameListing = new PointText(0, (view.bounds.top + clickNum));
 			dataPointNameListing.content = dataPointName;
 			dataPointNameListing.fillColor = 'white';
 			dataPointNameListing.position.y +=11;
@@ -599,13 +602,13 @@ $('.go').click(function(){
 
 $('.scifi').click(function(){
 		if (scifi.results.length > 27) {
-	  		$('#myCanvas').css('max-height', "1300px")
-	  		$( "#myCanvas" ).prop( "height", "1300" );
-	  		$( "#myCanvas" ).addClass( "activated" );
-	  		view.size.height = 1300;
+	  		// $('#myCanvas').css('max-height', "1300px")
+	  		// $( "#myCanvas" ).prop( "height", "1300" );
+	  		// $( "#myCanvas" ).addClass( "activated" );
+	  		// view.size.height = 1300;
 	  	}
 		// 27 media events is the current cap limit
-		startYearString = $('.startYear').val('1959');
+		startYearString = $('.startYear').val('1985');
 		endYearString = $('.endYear').val('2017');
 		var startYear = parseInt(startYearString);
 		var endYear = parseInt(endYearString);

@@ -7,10 +7,14 @@
 //    \/_/ \/_/ \/_/\/_/ \/_____/ \/_/\/_/\/_//\ \_\ \\/___/ 
 //                                            \ \____/       
 //                                             \/___/        
-
 Parse.initialize("kIv6nAYjGwfyFF9yozhchl8NC6jVcpViAvQZt8eU", "iax0nms3DbkYo4YG7EjWqAtOWbrn1PDxl6k67rLa");
 
-console.log('Hello Kevin!');
+var appView;
+var scifi;
+var paperView;
+
+new AppRouter();
+Parse.history.start();
 
 // =======================================================================
 	paper.install(window);

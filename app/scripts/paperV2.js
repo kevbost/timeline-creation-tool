@@ -45,7 +45,6 @@ console.log('%cCanvas height is ' + view.size.height, 'font-size:20px;background
 // =======================================================================
 	// paper.view.center = view.center;
 
-
 // =======================================================================
 //         _____  ____   __     ___    _____  __  __               
 //        / ___/ / __ \ / /    /   |  / ___/ / / / /               
@@ -125,9 +124,6 @@ var star = new Path.Circle(new Point(view.center), 100);
 		group7.rotate(0.8, point1);
 		group8.rotate(0.6, point1);
 	}
-	function test(){
-		console.log('%cHELLO?!?!  IS ANYBODY THEREEEEEEE?!?!??', 'font-size:50px;color:pink');
-	}
 // 
 // =======================================================================
 //         ____   ____   ___  _       __                  
@@ -145,7 +141,7 @@ var star = new Path.Circle(new Point(view.center), 100);
 // Draw canvas elements onClick of $('.go')
 // =======================================================================
 $('.go').click(function(){
-	test();
+
 	// =================================================
 	// Global Variables
 	// =================================================
@@ -184,22 +180,7 @@ $('.go').click(function(){
 	var endYear		= parseInt(endYearString);
 	var dateRange	= (endYear - startYear);
 
-	// ===================================================
-	//     _ ___     __     __      ___                    
-	//    (_) _/ ___/ /__ _/ /____ / _ \___ ____  ___ ____ 
-	//   / / _/ / _  / _ `/ __/ -_) , _/ _ `/ _ \/ _ `/ -_)
-	//  /_/_/   \_,_/\_,_/\__/\__/_/|_|\_,_/_//_/\_, /\__/ 
-	//        __              __                /___/      
-	//       / /____  ___    / /__ ________ ____           
-	//      / __/ _ \/ _ \  / / _ `/ __/ _ `/ -_) _ _      
-	//      \__/\___/\___/ /_/\_,_/_/  \_, /\__(_|_|_)     
-	//                                /___/                
-	if (dateRange > 10) {
-		// collapseDates();
-		checkInitialInputs();
-	} else {
-		checkInitialInputs();
-	}
+	checkInitialInputs();
 
 	// =====================================
 	//          ___ _           __       
@@ -266,125 +247,8 @@ $('.go').click(function(){
 console.log('%cThe span of dates being viewed is ' + (dateRange - 1) + ' years.', 'font-size:20px;color:green');
 console.log('%cStartYear is ' + startYear, 'font-size:20px;color:green');
 // =============================================================================================================
-	
-	// =================================
-	//             ____                 
-	//   _______  / / /__ ____  ___ ___ 
-	//  / __/ _ \/ / / _ `/ _ \(_-</ -_)
-	//  \__/\___/_/_/\_,_/ .__/___/\__/ 
-	//           __     /_/             
-	//       ___/ /__ _/ /____ ___      
-	//      / _  / _ `/ __/ -_|_-<      
-	//      \_,_/\_,_/\__/\__/___/      
-	//                                  
-	function collapseDates() {
-		initializeCollapsedPath()
-	}
 
-	// ==================================================================
-	//     ,-,--.  ,--.--------.   ,---.                  ,--.--------.  
-	//   ,-.'-  _\/==/,  -   , -\.--.'  \      .-.,.---. /==/,  -   , -\ 
-	//  /==/_ ,_.'\==\.-.  - ,-./\==\-/\ \    /==/  `   \\==\.-.  - ,-./ 
-	//  \==\  \    `--`\==\- \   /==/-|_\ |  |==|-, .=., |`--`\==\- \    
-	//   \==\ -\        \==\_ \  \==\,   - \ |==|   '='  /     \==\_ \   
-	//   _\==\ ,\       |==|- |  /==/ -   ,| |==|- ,   .'      |==|- |   
-	//  /==/\/ _ |      |==|, | /==/-  /\ - \|==|_  . ,'.      |==|, |   
-	//  \==\ - , /      /==/ -/ \==\ _.\=\.-'/==/  /\ ,  )     /==/ -/   
-	//   `--`---'       `--`--`  `--`        `--`-`--`--'      `--`--`   
-	//   ,--.--------.    ,----.    ,-,--.  ,--.--------.                
-	//  /==/,  -   , -\,-.--` , \ ,-.'-  _\/==/,  -   , -\               
-	//  \==\.-.  - ,-./==|-  _.-`/==/_ ,_.'\==\.-.  - ,-./               
-	//   `--`\==\- \  |==|   `.-.\==\  \    `--`\==\- \                  
-	//        \==\_ \/==/_ ,    / \==\ -\        \==\_ \                 
-	//        |==|- ||==|    .-'  _\==\ ,\       |==|- |                 
-	//        |==|, ||==|_  ,`-._/==/\/ _ |      |==|, |                 
-	//        /==/ -//==/ ,     /\==\ - , /      /==/ -/                 
-	//        `--`--``--`-----``  `--`---'       `--`--`                 
-
-	function initializeCollapsedPath() {
-		// =======================================
-		// Clear the Splash Animation
-		// =======================================
-		project.clear();
-		// =======================================
-		// Replace initial inputs with new inputs
-		// =======================================
-		$('.dateRange').addClass('activated');
-		$('.dataPoint').addClass('activated');
-		// =======================================
-		// Take date inputs and draw the timeline
-		// =======================================
-		var path = new Path();
-		var referencePath = new Path();
-			path.strokeWidth = 3;
-			path.strokeColor = '#d9534f';
-
-			path.segments = [];
-			path.add([left,(bottom - 50)]);
-			for (var i = 1; i < dateRange; i++){
-				var dateRange = dateRange / 2;
-				var point = new Point(width / dateRange * i, (bottom - 50));
-				path.add(point);
-			} // for (){}
-				path.add([right,(bottom - 50)]);
-				initializeCollapsedPointText();
-	} // function initializePath() {}
-
-	function initializeCollapsedPointText(){
-		var counter = startYear;
-		for (var i = 1; i < dateRange; i++){
-			var dateList = new PointText(width / dateRange * i, (bottom - 50));
-				dateList.content = (counter += 2);
-				dateList.fillColor = 'white';
-				dateList.rotate(300);
-				dateList.position.x -=14;
-				dateList.position.y +=25;
-		} // for (){}
-		initializeCollapsedReferencePath();
-	} // function initializePointText(){}
-
-	function initializeCollapsedReferencePath(){
-		for (var i = 1; i < dateRange; i += 2){
-			var from = new Point(width / dateRange * i, 0);
-			var to = new Point(width / dateRange * i, bottom - 52);
-				var referencePath = new Path.Line(from, to);
-					referencePath.style = style;
-					referencePath.strokeColor = 'black';
-		} // for (){}
-	} // function initializeReferencePath(){}
-	//        ,----.  .-._                                               
-	//     ,-.--` , \/==/ \  .-._  _,..---._                             
-	//    |==|-  _.-`|==|, \/ /, /==/,   -  \                            
-	//    |==|   `.-.|==|-  \|  ||==|   _   _\                           
-	//   /==/_ ,    /|==| ,  | -||==|  .=.   |                           
-	//   |==|    .-' |==| -   _ ||==|,|   | -|                           
-	//   |==|_  ,`-._|==|  /\ , ||==|  '='   /                           
-	//   /==/ ,     //==/, | |- ||==|-,   _`/                            
-	//   `--`-----`` `--`./  `--``-.`.____.'                             
-	//   ,--.--------.    ,----.    ,-,--.  ,--.--------.                
-	//  /==/,  -   , -\,-.--` , \ ,-.'-  _\/==/,  -   , -\               
-	//  \==\.-.  - ,-./==|-  _.-`/==/_ ,_.'\==\.-.  - ,-./               
-	//   `--`\==\- \  |==|   `.-.\==\  \    `--`\==\- \                  
-	//        \==\_ \/==/_ ,    / \==\ -\        \==\_ \                 
-	//        |==|- ||==|    .-'  _\==\ ,\       |==|- |                 
-	//        |==|, ||==|_  ,`-._/==/\/ _ |      |==|, |                 
-	//        /==/ -//==/ ,     /\==\ - , /      /==/ -/                 
-	//        `--`--``--`-----``  `--`---'       `--`--`                 
-	// ==================================================================
-
-
-	// =================================
-	//                       __       
-	//      _______ ___  ___/ /__ ____
-	//     / __/ -_) _ \/ _  / -_) __/
-	//    /_/  \__/_//_/\_,_/\__/_/   
-	//       __     __                
-	//   ___/ /__ _/ /____ _          
-	//  / _  / _ `/ __/ _ `/          
-	//  \_,_/\_,_/\__/\_,_/           
-	//                                
 	function initializePath() {
-
 		// =======================================
 		// Clear the Splash Animation
 		// =======================================
@@ -648,187 +512,43 @@ $('.add').click(function(){
 	//  \_,_/ \_,_/ \__/ \_,_/ /_/    \___//_//_//_/\__/      
 	//                                                        
 	function renderData(){
-		if (dataPointRange < 1) {
-				var dataPointRect = new Path.Circle({
-											center: [(width / dateRange) * (dataPointStart - startYear), ((bottom - clickNum) + 7)],
-											radius: 10,
-											fillColor: "orange"
-											})
-										dataPointRect.fillColor = {
-											hue: Math.random() * 360,
-											saturation: 1,
-											brightness: 1
-											};
-										// dataPointRect.fillColor = 'white';
-		} else {
-			var dataPointRect = new Rectangle(
-								new Point((width / dateRange) * (dataPointStart - startYear), (bottom - clickNum)),
-								new Size(((width / dateRange) * dataPointRange), 20)
-								);
-								var path = new Path.Rectangle(dataPointRect);
-									path.fillColor = {
-										hue: Math.random() * 360,
-										saturation: 1,
-										brightness: 1
-									};
-									// path.fillColor = 'white';
-		}
+		$('.notification-text').removeClass('activated');
+		console.log(clickNum);
+		console.log(clickOne);
+		var dataPointRangeCounter = dataPointRange;
+		var dataPointRect = new Rectangle(
+							new Point((width / dateRange) * (dataPointStart - startYear), (bottom - clickNum)),
+							new Size(((width / dateRange) * dataPointRange), 20)
+							);
+							var path = new Path.Rectangle(dataPointRect);
+								path.fillColor = {
+									hue: Math.random() * 360,
+									saturation: 1,
+									brightness: 1
+								};
+								// path.fillColor = 'white';
 
-			$('.notification-text').removeClass('activated');
-			console.log("clickOne:", (clickOne + 1) / 2 );
-			console.log("clickNum:", clickNum);
-			var dataPointRangeCounter = dataPointRange;
-			// ================================================================================================
-			dataPointRect
-			// ================================================================================================
-			var dataPointNameListing = new PointText(0, (bottom - clickNum));
-				dataPointNameListing.content = dataPointName;
-				dataPointNameListing.fillColor = 'white';
-				dataPointNameListing.position.y +=11;
-			// ================================================================================================
-				console.log('%cName = ' + dataPointName, 'font-size:20px;background-color:yellow');
-				console.log('%cStart = ' + dataPointStart, 'font-size:20px;background-color:yellow');
-				console.log('%cEnd = ' + dataPointEnd, 'font-size:20px;background-color:yellow');
-				console.log('%cDifference = ' + dataPointRange, 'font-size:20px;background-color:yellow;');
-			// ================================================================================================
-			// CLEAR INPUT FIELDS FOR NEW DATAPOINT
-			// =================================================
-				// $('.dataPoint-name-input').val('');
-				// $('.dataPoint-start-input').val('');
-				// $('.dataPoint-end-input').val('');
-			// =================================================
-			// Redraw canvas after click
-			// =========================
-				paper.view.draw();
-			// =========================
+		var dataPointNameListing = new PointText(0, (bottom - clickNum));
+			dataPointNameListing.content = dataPointName;
+			dataPointNameListing.fillColor = 'white';
+			dataPointNameListing.position.y +=11;
+		// ================================================================================================
+			console.log('%cName = ' + dataPointName, 'font-size:20px;background-color:yellow');
+			console.log('%cStart = ' + dataPointStart, 'font-size:20px;background-color:yellow');
+			console.log('%cEnd = ' + dataPointEnd, 'font-size:20px;background-color:yellow');
+			console.log('%cDifference = ' + dataPointRange, 'font-size:20px;background-color:yellow;');
+		// ================================================================================================
+		// CLEAR INPUT FIELDS FOR NEW DATAPOINT
+		// =================================================
+			// $('.dataPoint-name-input').val('');
+			// $('.dataPoint-start-input').val('');
+			// $('.dataPoint-end-input').val('');
+		// =================================================
+		// Redraw canvas after click
+		// =========================
+			paper.view.draw();
+		// =========================
 	} // function renderData(){}
-
-	// ==================================================================
-	//     ,-,--.  ,--.--------.   ,---.                  ,--.--------.  
-	//   ,-.'-  _\/==/,  -   , -\.--.'  \      .-.,.---. /==/,  -   , -\ 
-	//  /==/_ ,_.'\==\.-.  - ,-./\==\-/\ \    /==/  `   \\==\.-.  - ,-./ 
-	//  \==\  \    `--`\==\- \   /==/-|_\ |  |==|-, .=., |`--`\==\- \    
-	//   \==\ -\        \==\_ \  \==\,   - \ |==|   '='  /     \==\_ \   
-	//   _\==\ ,\       |==|- |  /==/ -   ,| |==|- ,   .'      |==|- |   
-	//  /==/\/ _ |      |==|, | /==/-  /\ - \|==|_  . ,'.      |==|, |   
-	//  \==\ - , /      /==/ -/ \==\ _.\=\.-'/==/  /\ ,  )     /==/ -/   
-	//   `--`---'       `--`--`  `--`        `--`-`--`--'      `--`--`   
-	//   ,--.--------.    ,----.    ,-,--.  ,--.--------.                
-	//  /==/,  -   , -\,-.--` , \ ,-.'-  _\/==/,  -   , -\               
-	//  \==\.-.  - ,-./==|-  _.-`/==/_ ,_.'\==\.-.  - ,-./               
-	//   `--`\==\- \  |==|   `.-.\==\  \    `--`\==\- \                  
-	//        \==\_ \/==/_ ,    / \==\ -\        \==\_ \                 
-	//        |==|- ||==|    .-'  _\==\ ,\       |==|- |                 
-	//        |==|, ||==|_  ,`-._/==/\/ _ |      |==|, |                 
-	//        /==/ -//==/ ,     /\==\ - , /      /==/ -/                 
-	//        `--`--``--`-----``  `--`---'       `--`--`                 
-
-	// TESTTESTTEST
-	// ========================================================
-	//                         __                             
-	//      ____ ___  ___  ___/ /___  ____   ___  ___  _    __
-	//     / __// -_)/ _ \/ _  // -_)/ __/  / _ \/ -_)| |/|/ /
-	//    /_/   \__//_//_/\_,_/ \__//_/    /_//_/\__/ |__,__/ 
-	//       __       __          ___         _       __      
-	//   ___/ /___ _ / /_ ___ _  / _ \ ___   (_)___  / /_     
-	//  / _  // _ `// __// _ `/ / ___// _ \ / // _ \/ __/     
-	//  \_,_/ \_,_/ \__/ \_,_/ /_/    \___//_//_//_/\__/      
-	//                                                        
-		function renderDataTESTTESTTEST(){
-
-		// Collection of Scifi Objects.
-		var collection = new ScifiCollection();
-			collection.fetch({
-				success: function(collection, error) {
-					collection.each(function(category) {
-						console.log("Yeah, they're loaded dawg")
-						// console.log("Name: " + " " + category.attributes.name + "\nStart: " + category.attributes.start + "\nEnds: " + " " + category.attributes.end);
-					
-
-		if (dataPointRange < 1) {
-				var dataPointRect = new Path.Circle({
-											center: [(width / dateRange) * (dataPointStart - startYear), ((bottom - clickNum) + 7)],
-											radius: 10,
-											fillColor: "orange"
-											})
-										dataPointRect.fillColor = {
-											hue: Math.random() * 360,
-											saturation: 1,
-											brightness: 1
-											};
-										// dataPointRect.fillColor = 'white';
-		} else {
-			var dataPointRect = new Rectangle(
-								new Point((width / dateRange) * (dataPointStart - startYear), (bottom - clickNum)),
-								new Size(((width / dateRange) * dataPointRange), 20)
-								);
-								var path = new Path.Rectangle(dataPointRect);
-									path.fillColor = {
-										hue: Math.random() * 360,
-										saturation: 1,
-										brightness: 1
-									};
-									// path.fillColor = 'white';
-		}
-
-			$('.notification-text').removeClass('activated');
-			console.log("clickOne:", (clickOne + 1) / 2 );
-			console.log("clickNum:", clickNum);
-			var dataPointRangeCounter = dataPointRange;
-			// ================================================================================================
-			dataPointRect
-			// ================================================================================================
-			var dataPointNameListing = new PointText(0, (bottom - clickNum));
-				dataPointNameListing.content = dataPointName;
-				dataPointNameListing.fillColor = 'white';
-				dataPointNameListing.position.y +=11;
-			// ================================================================================================
-				console.log('%cName = ' + dataPointName, 'font-size:20px;background-color:yellow');
-				console.log('%cStart = ' + dataPointStart, 'font-size:20px;background-color:yellow');
-				console.log('%cEnd = ' + dataPointEnd, 'font-size:20px;background-color:yellow');
-				console.log('%cDifference = ' + dataPointRange, 'font-size:20px;background-color:yellow;');
-			// ================================================================================================
-			// CLEAR INPUT FIELDS FOR NEW DATAPOINT
-			// =================================================
-				// $('.dataPoint-name-input').val('');
-				// $('.dataPoint-start-input').val('');
-				// $('.dataPoint-end-input').val('');
-			// =================================================
-			// Redraw canvas after click
-			// =========================
-				paper.view.draw();
-			// =========================
-
-					})
-				}, // success:
-				error: function(error) {
-					alert("Error: " + error.code + " " + error.message);
-				} // error:
-
-			}).then(function(){
-				console.log(collection.length)
-			}) // collection.fetch({})
-		} // function renderData(){}
-	//        ,----.  .-._                                               
-	//     ,-.--` , \/==/ \  .-._  _,..---._                             
-	//    |==|-  _.-`|==|, \/ /, /==/,   -  \                            
-	//    |==|   `.-.|==|-  \|  ||==|   _   _\                           
-	//   /==/_ ,    /|==| ,  | -||==|  .=.   |                           
-	//   |==|    .-' |==| -   _ ||==|,|   | -|                           
-	//   |==|_  ,`-._|==|  /\ , ||==|  '='   /                           
-	//   /==/ ,     //==/, | |- ||==|-,   _`/                            
-	//   `--`-----`` `--`./  `--``-.`.____.'                             
-	//   ,--.--------.    ,----.    ,-,--.  ,--.--------.                
-	//  /==/,  -   , -\,-.--` , \ ,-.'-  _\/==/,  -   , -\               
-	//  \==\.-.  - ,-./==|-  _.-`/==/_ ,_.'\==\.-.  - ,-./               
-	//   `--`\==\- \  |==|   `.-.\==\  \    `--`\==\- \                  
-	//        \==\_ \/==/_ ,    / \==\ -\        \==\_ \                 
-	//        |==|- ||==|    .-'  _\==\ ,\       |==|- |                 
-	//        |==|, ||==|_  ,`-._/==/\/ _ |      |==|, |                 
-	//        /==/ -//==/ ,     /\==\ - , /      /==/ -/                 
-	//        `--`--``--`-----``  `--`---'       `--`--`                 
-	// ==================================================================
-
 }); // $('.add').click(function(){})
 }); // $('.go').click(function(){})
 
@@ -847,5 +567,68 @@ $('.add').click(function(){
 	function onResize(event) {
 		// Resize the red circle to fill the bounds of the view:
 		// rectangle.fitBounds(view.bounds, true);
-		paper.view.update();
+		// paper.view.update();
 	}
+
+// =======================================================================
+//   ____    ____    ______   ____    __  __  ____     ____                            
+//  /\  _`\ /\  _`\ /\__  _\ /\  _`\ /\ \/\ \/\  _`\  /\  _`\                          
+//  \ \,\L\_\ \ \/\_\/_/\ \/ \ \ \L\_\ \ `\\ \ \ \/\_\\ \ \L\_\                        
+//   \/_\__ \\ \ \/_/_ \ \ \  \ \  _\L\ \ , ` \ \ \/_/_\ \  _\L                        
+//     /\ \L\ \ \ \L\ \ \_\ \__\ \ \L\ \ \ \`\ \ \ \L\ \\ \ \L\ \                      
+//     \ `\____\ \____/ /\_____\\ \____/\ \_\ \_\ \____/ \ \____/                      
+//      \/_____/\/___/  \/_____/ \/___/  \/_/\/_/\/___/   \/___/                       
+//           ____    ______   ____    ______  ______   _____   __  __                  
+//          /\  _`\ /\__  _\ /\  _`\ /\__  _\/\__  _\ /\  __`\/\ \/\ \                 
+//          \ \ \L\_\/_/\ \/ \ \ \/\_\/_/\ \/\/_/\ \/ \ \ \/\ \ \ `\\ \                
+//           \ \  _\/  \ \ \  \ \ \/_/_ \ \ \   \ \ \  \ \ \ \ \ \ , ` \               
+//            \ \ \/    \_\ \__\ \ \L\ \ \ \ \   \_\ \__\ \ \_\ \ \ \`\ \              
+//             \ \_\    /\_____\\ \____/  \ \_\  /\_____\\ \_____\ \_\ \_\             
+//              \/_/    \/_____/ \/___/    \/_/  \/_____/ \/_____/\/_/\/_/             
+//                 ______  ______            ____    __     ______   __  __  ____      
+//                /\__  _\/\__  _\   /'\_/`\/\  _`\ /\ \   /\__  _\ /\ \/\ \/\  _`\    
+//                \/_/\ \/\/_/\ \/  /\      \ \ \L\_\ \ \  \/_/\ \/ \ \ `\\ \ \ \L\_\  
+//                   \ \ \   \ \ \  \ \ \__\ \ \  _\L\ \ \  __\ \ \  \ \ , ` \ \  _\L  
+//                    \ \ \   \_\ \__\ \ \_/\ \ \ \L\ \ \ \L\ \\_\ \__\ \ \`\ \ \ \L\ \
+//                     \ \_\  /\_____\\ \_\\ \_\ \____/\ \____//\_____\\ \_\ \_\ \____/
+//                      \/_/  \/_____/ \/_/ \/_/\/___/  \/___/ \/_____/ \/_/\/_/\/___/ 
+//                                                                                     
+$('.scifi').click(function(){
+		if (scifi.results.length > 27) {
+			$("#myCanvas").css('height', "1300px")
+			$( "#myCanvas" ).prop( "height", "1300" );
+			$( "#myCanvas" ).addClass( "activated" );
+			view.size.height = 1300;
+			paper.view.draw()
+		}
+		// =======================================
+		// 27 media events is the current cap limit
+		// =======================================
+		startYearString = $('.startYear').val('1985');
+		endYearString = $('.endYear').val('2017');
+		var startYear = parseInt(startYearString);
+		var endYear = parseInt(endYearString);
+		var dateRange = (endYear - startYear);
+	$( ".go" ).click();
+	  // comparator: function( Photo ) { return Photo.get('_id')};
+		for (i = 0; i < scifi.results.length; i++) {
+			// TVname = events.media.tv[i].name;
+			// TVstart = events.media.tv[i].start;
+			// TVend = events.media.tv[i].end;
+			TVname = scifi.results[i].name;
+			TVstart = scifi.results[i].start;
+			TVend = scifi.results[i].end;
+			dataPointName			= $('.dataPoint-name-input').val(TVname);
+			dataPointStartString	= $('.dataPoint-start-input').val(TVstart);
+			dataPointEndString		= $('.dataPoint-end-input').val(TVend);
+		$('.add').click();
+
+
+			$('.dataPoint-name-input').val('');
+			$('.dataPoint-start-input').val('');
+			$('.dataPoint-end-input').val('');
+		}
+		console.log(view.size.width);
+				paper.view.draw();
+
+})

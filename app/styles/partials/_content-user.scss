@@ -8,7 +8,7 @@
 
 /* Space out content a bit */
 body {
-  padding-top: 70px;
+  padding-top: 50px;
   padding-bottom: 0px;
   font-size: 62.5%;
 }
@@ -30,24 +30,41 @@ a {
 }
 
 // =======================================================================
-.container {
+
+.navbar {
+	margin-bottom: 0;
+}
+
+.navbar-inverse {
+	background-color: $gray-dark;
+}
+
+.container-fluid {
 	// max-width: 720px;
 	// min-height: 500px;
 	// position:absolute;
 	// top:70px;
 	// right:0;
 	// bottom:70px;
-	// left:0; 
+	// left:0;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
 	}
+
+.row {
+	// background-color: orange;
+	margin-left: -10px;
+	margin-right: -10px;
+}
 
 .main {
 	font-size: 3.2em;
-	.row {
-		background-color: orange;
-	}
 }
 
 .jumbotron	{
+	background-color: $gray-darker;
 	// height: 500px;
 	// overflow: scroll;
 
@@ -56,10 +73,8 @@ a {
 // =======================================================================
 
 #myCanvas {
-	// position: relative;
 	width: 100%;
-	max-height: 600px;
-	// height: 100%;
+	height: 100vh * 0.82;
 	background-color: $gray-darker;
 	&.activated {
 		// width: 100%;
@@ -71,6 +86,26 @@ a {
 
 
 // =======================================================================
+
+.form-control {
+	background-color: lighten($brand-primary, 40%);
+		color: darken($brand-primary, 20%);;
+}
+
+.input-group-addon {
+	background-color: lighten($brand-primary, 35%);
+	color: darken($brand-primary, 20%);;
+}
+
+.btn {
+	background-color: lighten($brand-success, 10%);
+	&:hover {
+		background-color: lighten($brand-success, 20%);	
+	}
+	&:focus {
+		background-color: lighten($brand-success, 10%);
+	}
+}
 
 .dateRange {
 	display: inherit;

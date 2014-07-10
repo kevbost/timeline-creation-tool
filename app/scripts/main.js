@@ -18,21 +18,18 @@ Parse.history.start();
 
 // =======================================================================
 	paper.install(window);
-	// Keep global references to both tools, so the HTML
-	// links below can access them.
-	var tool1, tool2;
 // =======================================================================
 	window.onload = function() {
 		paper.setup('myCanvas');
+		var win = $(window);
 	};
+
 // =======================================================================
 	$('.save').click(function(){
 		myCanvas.toBlob(function(blob) {
 			saveAs(blob, "pretty image.png");
 		});
 	});
-
-
 // Click the go button automatically for testing
 // =======================================================================
 setTimeout(function() {

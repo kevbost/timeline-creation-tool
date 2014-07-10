@@ -21,24 +21,30 @@
 //                     \ \_\  /\_____\\ \_\\ \_\ \____/\ \____//\_____\\ \_\ \_\ \____/
 //                      \/_/  \/_____/ \/_/ \/_/\/___/  \/___/ \/_____/ \/_/\/_/\/___/ 
 //                                                                                     
-$('.scifi').click(function(){
-		if (scifi.results.length > 27) {
-			$("#myCanvas").css('height', "1300px")
-			$( "#myCanvas" ).prop( "height", "1300" );
-			$( "#myCanvas" ).addClass( "activated" );
-			view.size.height = 1300;
-			paper.view.draw()
-		}
-		// =======================================
-		// 27 media events is the current cap limit
-		// =======================================
+$('.scifi').click(function() {
+	if (scifi.results.length > 27) {
+		resizeCanvas();
+		loadData();
+	} else {
+		loadData();
+	}
+
+	function resizeCanvas() {
+		$("#myCanvas").prop("height", "1300");
+		$("#myCanvas").css('min-height', "1300px")
+		$("#myCanvas").addClass("activated");
+		view.size.height = 1300;
+		paper.view.draw();
+	}
+
+	function loadData() {
 		startYearString = $('.startYear').val('1985');
 		endYearString = $('.endYear').val('2017');
 		var startYear = parseInt(startYearString);
 		var endYear = parseInt(endYearString);
 		var dateRange = (endYear - startYear);
-	$( ".go" ).click();
-	  // comparator: function( Photo ) { return Photo.get('_id')};
+		$(".go").click();
+		// comparator: function( Photo ) { return Photo.get('_id')};
 		for (i = 0; i < scifi.results.length; i++) {
 			// TVname = events.media.tv[i].name;
 			// TVstart = events.media.tv[i].start;
@@ -46,16 +52,41 @@ $('.scifi').click(function(){
 			TVname = scifi.results[i].name;
 			TVstart = scifi.results[i].start;
 			TVend = scifi.results[i].end;
-			dataPointName			= $('.dataPoint-name-input').val(TVname);
-			dataPointStartString	= $('.dataPoint-start-input').val(TVstart);
-			dataPointEndString		= $('.dataPoint-end-input').val(TVend);
-		$('.add').click();
-
+			dataPointName = $('.dataPoint-name-input').val(TVname);
+			dataPointStartString = $('.dataPoint-start-input').val(TVstart);
+			dataPointEndString = $('.dataPoint-end-input').val(TVend);
+			
+			$('.add').click();
 
 			$('.dataPoint-name-input').val('');
 			$('.dataPoint-start-input').val('');
 			$('.dataPoint-end-input').val('');
 		}
 		console.log(view.size.width);
-				paper.view.draw();
+		paper.view.draw();
+	}
 })
+
+// var FunctionOne = function () {
+//   // create a deferred object
+//   var r = $.Deferred();
+
+//   // do whatever you want (e.g. ajax/animations other asyc tasks)
+
+//   setTimeout(function () {
+//     // and call `resolve` on the deferred object, once you're done
+//     r.resolve();
+//   }, 2500);
+
+//   // return the deferred object
+//   return r;
+// };
+
+// // define FunctionTwo as needed
+// var FunctionTwo = function () {
+//   console.log('FunctionTwo');
+// };
+
+// // call FunctionOne and use the `done` method
+// // with `FunctionTwo` as it's parameter
+// FunctionOne().done(FunctionTwo);

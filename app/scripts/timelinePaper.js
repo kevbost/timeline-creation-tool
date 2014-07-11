@@ -44,7 +44,6 @@ console.log('%cCanvas height is ' + view.size.height, 'font-size:20px;background
 // Load Canvas
 // =======================================================================
 	// paper.view.center = view.center;
-
 // =======================================================================
 //         _____  ____   __     ___    _____  __  __               
 //        / ___/ / __ \ / /    /   |  / ___/ / / / /               
@@ -58,73 +57,119 @@ console.log('%cCanvas height is ' + view.size.height, 'font-size:20px;background
 //  /_/  |_|/_/ |_//___//_/  /_//_/  |_|/_/  /___/ \____//_/ |_/   
 //                                                         
 // =======================================================================
-// Draw the Splash Animation
+// Orbit
 // =======================================================================
-var star = new Path.Circle(new Point(view.center), 100);
-	star.style = {fillColor: 'orange', strokeColor: null};
+// var yellow = 'rgba(200, 192, 62, 1)'
 
-	var moonGroup1 = new Path.Circle(new Point(view.center), 122);
-	// moonGroup1.style = {strokeColor: 'black'};
-	var moonGroup1a = new Path.Circle(new Point(view.center + 85), 5);
-		moonGroup1a.style = {fillColor: 'rgb(200, 192, 62)', strokeColor: null};
+// var star = new Path.Circle(new Point(view.center), 100);
+// 	star.style = {fillColor: yellow, strokeColor: null};
 
-	var moonGroup2 = new Path.Circle(new Point(view.center), 142);
-	// moonGroup2.style = {strokeColor: 'black'};
-	var moonGroup2a = new Path.Circle(new Point(view.center + 100), 5);
-		moonGroup2a.style = {fillColor: 'rgb(200, 192, 62)', strokeColor: null};
+// 	var starPoint = star.position
+// 	console.log(starPoint)
 
-	var moonGroup3 = new Path.Circle(new Point(view.center), 172);
-	// moonGroup3.style = {strokeColor: 'black'};
-	var moonGroup3a = new Path.Circle(new Point(view.center + 120), 5);
-		moonGroup3a.style = {fillColor: 'rgb(200, 192, 62)', strokeColor: null};
+// 	var moonGroup1 = new Path.Circle(new Point(starPoint), 122);
+// 	// moonGroup1.style = {strokeColor: 'black'};
+// 	var moonGroup1a = new Path.Circle(new Point(starPoint + 85), 5);
+// 		moonGroup1a.style = {fillColor: yellow, strokeColor: null};
 
-	var moonGroup4 = new Path.Circle(new Point(view.center), 200);
-	// moonGroup4.style = {strokeColor: 'black'};
-	var moonGroup4a = new Path.Circle(new Point(view.center + 140), 10);
-		moonGroup4a.style = {fillColor: 'rgb(200, 192, 62)', strokeColor: null};
+// 	var moonGroup2 = new Path.Circle(new Point(starPoint), 142);
+// 	// moonGroup2.style = {strokeColor: 'black'};
+// 	var moonGroup2a = new Path.Circle(new Point(starPoint + 100), 5);
+// 		moonGroup2a.style = {fillColor: yellow, strokeColor: null};
 
-	var moonGroup5 = new Path.Circle(new Point(view.center), 232);
-	// moonGroup5.style = {strokeColor: 'black'};
-	var moonGroup5a = new Path.Circle(new Point(view.center + 165), 5);
-		moonGroup5a.style = {fillColor: 'rgb(200, 192, 62)', strokeColor: null};
+// 	var moonGroup3 = new Path.Circle(new Point(starPoint), 172);
+// 	// moonGroup3.style = {strokeColor: 'black'};
+// 	var moonGroup3a = new Path.Circle(new Point(starPoint + 120), 5);
+// 		moonGroup3a.style = {fillColor: yellow, strokeColor: null};
 
-	var moonGroup6 = new Path.Circle(new Point(view.center), 280);
-	// moonGroup6.style = {strokeColor: 'black'};
-	var moonGroup6a = new Path.Circle(new Point(view.center + 200), 5);
-		moonGroup6a.style = {fillColor: 'rgb(200, 192, 62)', strokeColor: null};
+// 	var moonGroup4 = new Path.Circle(new Point(starPoint), 200);
+// 	// moonGroup4.style = {strokeColor: 'black'};
+// 	var moonGroup4a = new Path.Circle(new Point(starPoint + 140), 10);
+// 		moonGroup4a.style = {fillColor: yellow, strokeColor: null};
+
+// 	var moonGroup5 = new Path.Circle(new Point(starPoint), 232);
+// 	// moonGroup5.style = {strokeColor: 'black'};
+// 	var moonGroup5a = new Path.Circle(new Point(starPoint + 165), 5);
+// 		moonGroup5a.style = {fillColor: yellow, strokeColor: null};
+
+// 	var moonGroup6 = new Path.Circle(new Point(starPoint), 280);
+// 	// moonGroup6.style = {strokeColor: 'black'};
+// 	var moonGroup6a = new Path.Circle(new Point(starPoint + 200), 5);
+// 		moonGroup6a.style = {fillColor: yellow, strokeColor: null};
 	
-	var moonGroup7 = new Path.Circle(new Point(view.center), 360);
-	// moonGroup7.style = {strokeColor: 'black'};
-	var moonGroup7a = new Path.Circle(new Point(view.center + 255), 25);
-		moonGroup7a.style = {fillColor: 'rgb(200, 192, 62)', strokeColor: null};
+// 	var moonGroup7 = new Path.Circle(new Point(starPoint), 360);
+// 	// moonGroup7.style = {strokeColor: 'black'};
+// 	var moonGroup7a = new Path.Circle(new Point(starPoint + 255), 25);
+// 		moonGroup7a.style = {fillColor: yellow, strokeColor: null};
 
-	var moonGroup8 = new Path.Circle(new Point(view.center), 450);
-	// moonGroup8.style = {strokeColor: 'b+ack'};
-	var moonGroup8a = new Path.Circle(new Point(view.center + 325), 35);
-		moonGroup8a.style = {fillColor: 'rgb(200, 192, 62)', strokeColor: null};
+// 	var moonGroup8 = new Path.Circle(new Point(starPoint), 450);
+// 	// moonGroup8.style = {strokeColor: 'black'};
+// 	var moonGroup8a = new Path.Circle(new Point(starPoint + 325), 35);
+// 		moonGroup8a.style = {fillColor: yellow, strokeColor: null};
 
-	var point1 = moonGroup1.center;
+// 	var point1 = moonGroup1.center;
 
-	var group1 = new Group([moonGroup1, moonGroup1a]);
-	var group2 = new Group([moonGroup2, moonGroup2a]);
-	var group3 = new Group([moonGroup3, moonGroup3a]);
-	var group4 = new Group([moonGroup4, moonGroup4a]);
-	var group5 = new Group([moonGroup5, moonGroup5a]);
-	var group6 = new Group([moonGroup6, moonGroup6a]);
-	var group7 = new Group([moonGroup7, moonGroup7a]);
-	var group8 = new Group([moonGroup8, moonGroup8a]);
+// 	var group1 = new Group([moonGroup1, moonGroup1a]);
+// 	var group2 = new Group([moonGroup2, moonGroup2a]);
+// 	var group3 = new Group([moonGroup3, moonGroup3a]);
+// 	var group4 = new Group([moonGroup4, moonGroup4a]);
+// 	var group5 = new Group([moonGroup5, moonGroup5a]);
+// 	var group6 = new Group([moonGroup6, moonGroup6a]);
+// 	var group7 = new Group([moonGroup7, moonGroup7a]);
+// 	var group8 = new Group([moonGroup8, moonGroup8a]);
 
-	function onFrame(event){
-		group1.rotate(3, point1);
-		group2.rotate(2.5, point1);
-		group3.rotate(2.1, point1);
-		group4.rotate(1.8, point1);
-		group5.rotate(1.4, point1);
-		group6.rotate(1, point1);
-		group7.rotate(0.8, point1);
-		group8.rotate(0.6, point1);
+// 	function onFrame(event){
+// 		group1.rotate(3, point1);
+// 		group2.rotate(2.5, point1);
+// 		group3.rotate(2.1, point1);
+// 		group4.rotate(1.8, point1);
+// 		group5.rotate(1.4, point1);
+// 		group6.rotate(1, point1);
+// 		group7.rotate(0.8, point1);
+// 		group8.rotate(0.6, point1);
+// 	}
+
+function onMouseMove(event) {
+	// point1 = event.point;
+		splashText.position = event.point;
+		splashText.fillColor.hue += 0.5;
+}
+// =======================================================================
+// Text
+// =======================================================================
+// Create a centered text item at the center of the view:
+var splashText = new PointText({
+	point: view.bounds.topCenter,
+	justification: 'center',
+	fontSize: 20,
+	fillColor: 'yellow',
+	content: "Timeline creation tool!  Take a look \nat the input fields above this area \nand input a START YEAR \nand then an END YEAR."
+	});
+	splashText.fillColor = {
+		hue: Math.random() * 360,
+		saturation: 0.5,
+		brightness: 1
+		};
+	
+	splashText.position.y += 50;
+	splashText.fontFamily = 'Lato';
+	splashText.fontWeight = '500';
+	splashText.fitBounds(view.bounds);
+	// splashText.blendMode = 'xor';
+	// =======================================================================
+	// Set the events to keep the instructions where the mouse points
+	// =======================================================================
+	// function onMouseMove(event) {
+	// 	splashText.position = event.point;
+	// 	splashText.fillColor.hue += 0.5;
+	// }
+	function onMouseDown(event){
+		splashText.fillColor = {
+			hue: Math.random() * 360,
+			saturation: 0,
+			brightness: 0
+			};
 	}
-// 
 // =======================================================================
 //         ____   ____   ___  _       __                  
 //        / __ \ / __ \ /   || |     / /                  
@@ -258,8 +303,9 @@ $('.go').click(function(){
 	} // function initialEndHasError (){}
 
 // =============================================================================================================
-console.log('%cThe span of dates being viewed is ' + (dateRange - 1) + ' years.', 'font-size:20px;color:green');
-console.log('%cStartYear is ' + startYear, 'font-size:20px;color:green');
+console.log('%cThe span of dates being viewed is ' + (dateRange - 1) + ' years.', 'font-size:14px;color:green');
+console.log('%cStartYear is ' + startYear, 'font-size:14px;color:green');
+console.log('%cEndYear is ' + endYear, 'font-size:14px;color:green');
 // =============================================================================================================
 	
 	// =================================
@@ -416,6 +462,7 @@ console.log('%cStartYear is ' + startYear, 'font-size:20px;color:green');
 				dateList.rotate(300);
 				dateList.position.x -=14;
 				dateList.position.y +=25;
+				dateList.font
 		} // for (){}
 		initializeReferencePath();
 	} // function initializePointText(){}
@@ -491,6 +538,10 @@ $('.add').click(function(){
 		// 	alert('27 individual events is the most that this graph can display');
 		// 	$('.add').prop( "disabled", true);
 		// }
+		if (((clickOne + 1) / 2) > view.size.height / 21.5) {
+			alert(clickOne + ' individual events is the most that this graph can display');
+			$('.add').prop( "disabled", true);
+		}
 		// ===================================
 	} // function clicksOne(){}
 
@@ -674,17 +725,17 @@ $('.add').click(function(){
 			console.log("clickNum:", clickNum);
 			var dataPointRangeCounter = dataPointRange;
 			// ================================================================================================
-			dataPointRect
+			// dataPointRect
 			// ================================================================================================
 			var dataPointNameListing = new PointText(0, (bottom - clickNum));
 				dataPointNameListing.content = dataPointName;
 				dataPointNameListing.fillColor = 'white';
 				dataPointNameListing.position.y +=11;
 			// ================================================================================================
-				console.log('%cName = ' + dataPointName, 'font-size:20px;background-color:yellow');
-				console.log('%cStart = ' + dataPointStart, 'font-size:20px;background-color:yellow');
-				console.log('%cEnd = ' + dataPointEnd, 'font-size:20px;background-color:yellow');
-				console.log('%cDifference = ' + dataPointRange, 'font-size:20px;background-color:yellow;');
+				console.log('%cName = ' + dataPointName, 'font-size:14px;background-color:yellow');
+				console.log('%cStart = ' + dataPointStart, 'font-size:14px;background-color:yellow');
+				console.log('%cEnd = ' + dataPointEnd, 'font-size:14px;background-color:yellow');
+				console.log('%cDifference = ' + dataPointRange, 'font-size:14px;background-color:yellow;');
 			// ================================================================================================
 			// CLEAR INPUT FIELDS FOR NEW DATAPOINT
 			// =================================================
@@ -697,133 +748,6 @@ $('.add').click(function(){
 				paper.view.draw();
 			// =========================
 	} // function renderData(){}
-
-	// ==================================================================
-	//     ,-,--.  ,--.--------.   ,---.                  ,--.--------.  
-	//   ,-.'-  _\/==/,  -   , -\.--.'  \      .-.,.---. /==/,  -   , -\ 
-	//  /==/_ ,_.'\==\.-.  - ,-./\==\-/\ \    /==/  `   \\==\.-.  - ,-./ 
-	//  \==\  \    `--`\==\- \   /==/-|_\ |  |==|-, .=., |`--`\==\- \    
-	//   \==\ -\        \==\_ \  \==\,   - \ |==|   '='  /     \==\_ \   
-	//   _\==\ ,\       |==|- |  /==/ -   ,| |==|- ,   .'      |==|- |   
-	//  /==/\/ _ |      |==|, | /==/-  /\ - \|==|_  . ,'.      |==|, |   
-	//  \==\ - , /      /==/ -/ \==\ _.\=\.-'/==/  /\ ,  )     /==/ -/   
-	//   `--`---'       `--`--`  `--`        `--`-`--`--'      `--`--`   
-	//   ,--.--------.    ,----.    ,-,--.  ,--.--------.                
-	//  /==/,  -   , -\,-.--` , \ ,-.'-  _\/==/,  -   , -\               
-	//  \==\.-.  - ,-./==|-  _.-`/==/_ ,_.'\==\.-.  - ,-./               
-	//   `--`\==\- \  |==|   `.-.\==\  \    `--`\==\- \                  
-	//        \==\_ \/==/_ ,    / \==\ -\        \==\_ \                 
-	//        |==|- ||==|    .-'  _\==\ ,\       |==|- |                 
-	//        |==|, ||==|_  ,`-._/==/\/ _ |      |==|, |                 
-	//        /==/ -//==/ ,     /\==\ - , /      /==/ -/                 
-	//        `--`--``--`-----``  `--`---'       `--`--`                 
-
-	// TESTTESTTEST
-	// ========================================================
-	//                         __                             
-	//      ____ ___  ___  ___/ /___  ____   ___  ___  _    __
-	//     / __// -_)/ _ \/ _  // -_)/ __/  / _ \/ -_)| |/|/ /
-	//    /_/   \__//_//_/\_,_/ \__//_/    /_//_/\__/ |__,__/ 
-	//       __       __          ___         _       __      
-	//   ___/ /___ _ / /_ ___ _  / _ \ ___   (_)___  / /_     
-	//  / _  // _ `// __// _ `/ / ___// _ \ / // _ \/ __/     
-	//  \_,_/ \_,_/ \__/ \_,_/ /_/    \___//_//_//_/\__/      
-	//                                                        
-		function renderDataTESTTESTTEST(){
-
-		// Collection of Scifi Objects.
-		var collection = new ScifiCollection();
-			collection.fetch({
-				success: function(collection, error) {
-					collection.each(function(category) {
-						console.log("Yeah, they're loaded dawg")
-						// console.log("Name: " + " " + category.attributes.name + "\nStart: " + category.attributes.start + "\nEnds: " + " " + category.attributes.end);
-					
-
-		if (dataPointRange < 1) {
-				var dataPointRect = new Path.Circle({
-											center: [(width / dateRange) * (dataPointStart - startYear), ((bottom - clickNum) + 7)],
-											radius: 10,
-											fillColor: "orange"
-											})
-										dataPointRect.fillColor = {
-											hue: Math.random() * 360,
-											saturation: 1,
-											brightness: 1
-											};
-										// dataPointRect.fillColor = 'white';
-		} else {
-			var dataPointRect = new Rectangle(
-								new Point((width / dateRange) * (dataPointStart - startYear), (bottom - clickNum)),
-								new Size(((width / dateRange) * dataPointRange), 20)
-								);
-								var path = new Path.Rectangle(dataPointRect);
-									path.fillColor = {
-										hue: Math.random() * 360,
-										saturation: 1,
-										brightness: 1
-									};
-									// path.fillColor = 'white';
-		}
-
-			$('.notification-text').removeClass('activated');
-			console.log("clickOne:", (clickOne + 1) / 2 );
-			console.log("clickNum:", clickNum);
-			var dataPointRangeCounter = dataPointRange;
-			// ================================================================================================
-			dataPointRect
-			// ================================================================================================
-			var dataPointNameListing = new PointText(0, (bottom - clickNum));
-				dataPointNameListing.content = dataPointName;
-				dataPointNameListing.fillColor = 'white';
-				dataPointNameListing.position.y +=11;
-			// ================================================================================================
-				console.log('%cName = ' + dataPointName, 'font-size:20px;background-color:yellow');
-				console.log('%cStart = ' + dataPointStart, 'font-size:20px;background-color:yellow');
-				console.log('%cEnd = ' + dataPointEnd, 'font-size:20px;background-color:yellow');
-				console.log('%cDifference = ' + dataPointRange, 'font-size:20px;background-color:yellow;');
-			// ================================================================================================
-			// CLEAR INPUT FIELDS FOR NEW DATAPOINT
-			// =================================================
-				// $('.dataPoint-name-input').val('');
-				// $('.dataPoint-start-input').val('');
-				// $('.dataPoint-end-input').val('');
-			// =================================================
-			// Redraw canvas after click
-			// =========================
-				paper.view.draw();
-			// =========================
-
-					})
-				}, // success:
-				error: function(error) {
-					alert("Error: " + error.code + " " + error.message);
-				} // error:
-
-			}).then(function(){
-				console.log(collection.length)
-			}) // collection.fetch({})
-		} // function renderData(){}
-	//        ,----.  .-._                                               
-	//     ,-.--` , \/==/ \  .-._  _,..---._                             
-	//    |==|-  _.-`|==|, \/ /, /==/,   -  \                            
-	//    |==|   `.-.|==|-  \|  ||==|   _   _\                           
-	//   /==/_ ,    /|==| ,  | -||==|  .=.   |                           
-	//   |==|    .-' |==| -   _ ||==|,|   | -|                           
-	//   |==|_  ,`-._|==|  /\ , ||==|  '='   /                           
-	//   /==/ ,     //==/, | |- ||==|-,   _`/                            
-	//   `--`-----`` `--`./  `--``-.`.____.'                             
-	//   ,--.--------.    ,----.    ,-,--.  ,--.--------.                
-	//  /==/,  -   , -\,-.--` , \ ,-.'-  _\/==/,  -   , -\               
-	//  \==\.-.  - ,-./==|-  _.-`/==/_ ,_.'\==\.-.  - ,-./               
-	//   `--`\==\- \  |==|   `.-.\==\  \    `--`\==\- \                  
-	//        \==\_ \/==/_ ,    / \==\ -\        \==\_ \                 
-	//        |==|- ||==|    .-'  _\==\ ,\       |==|- |                 
-	//        |==|, ||==|_  ,`-._/==/\/ _ |      |==|, |                 
-	//        /==/ -//==/ ,     /\==\ - , /      /==/ -/                 
-	//        `--`--``--`-----``  `--`---'       `--`--`                 
-	// ==================================================================
-
 }); // $('.add').click(function(){})
 }); // $('.go').click(function(){})
 
@@ -842,7 +766,8 @@ $('.add').click(function(){
 	function onResize(event) {
 		// Resize the red circle to fill the bounds of the view:
 		// rectangle.fitBounds(view.bounds, true);
-		paper.view.update();
+		console.log(view.size.width)
+		// paper.view.update();
 	}
 
 

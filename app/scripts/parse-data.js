@@ -18,7 +18,7 @@ var Scifi = Parse.Object.extend({
 var ScifiCollection = Parse.Collection.extend({
 	model: Scifi,
 	query: (new Parse.Query(Scifi))
-		.equalTo("category", "scifi")
+		.equalTo("start", "2009")
 		// .greaterThan("start", "2009")
 	});
 
@@ -82,7 +82,7 @@ var AppView = Parse.View.extend({
 			} // error:
 
 		}).then(function(){
-			console.log(collection.length)
+			// console.log(collection.length)
 		}) // collection.fetch({})
 	}, // fetchData: function(){}
 

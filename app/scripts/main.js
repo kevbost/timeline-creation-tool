@@ -20,9 +20,21 @@ Parse.history.start();
 	paper.install(window);
 // =======================================================================
 	window.onload = function() {
-		paper.setup('myCanvas');
+    paper.setup('myCanvas');
+    // paper.setup('orbitCanvas');
+		// paper.setup('scifiCanvas');
 	};
 
+  $('.scifi').click(function(){
+    // paper.project.clear()
+    $('.navbar-toggle').click();
+  });
+
+  $('.orbit').click(function(){
+    paper.project.clear();
+    $('.navbar-toggle').click();
+    $('.orbitCanvasClass').removeClass("activated");
+  })
 // =======================================================================
 	$('.save').click(function(){
 		myCanvas.toBlob(function(blob) {

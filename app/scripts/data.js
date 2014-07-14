@@ -12,7 +12,7 @@ var scifi = {
         {
             "name": "Gene Roddenberry's Death",
             "start": "1991",
-            "end": "1992",
+            "end": "1991",
             "category": "scifi"
         },
         {

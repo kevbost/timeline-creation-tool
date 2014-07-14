@@ -1,3 +1,24 @@
+//   ______  ______             ____     __     ______   __  __   ____                           
+//  /\__  _\/\__  _\   /'\_/`\ /\  _`\  /\ \   /\__  _\ /\ \/\ \ /\  _`\                         
+//  \/_/\ \/\/_/\ \/  /\      \\ \ \L\_\\ \ \  \/_/\ \/ \ \ `\\ \\ \ \L\_\                       
+//     \ \ \   \ \ \  \ \ \__\ \\ \  _\L \ \ \  __\ \ \  \ \ , ` \\ \  _\L                       
+//      \ \ \   \_\ \__\ \ \_/\ \\ \ \L\ \\ \ \L\ \\_\ \__\ \ \`\ \\ \ \L\ \                     
+//       \ \_\  /\_____\\ \_\\ \_\\ \____/ \ \____//\_____\\ \_\ \_\\ \____/                     
+//        \/_/  \/_____/ \/_/ \/_/ \/___/   \/___/ \/_____/ \/_/\/_/ \/___/                      
+//           ____     ____     ____     ______   ______  ______   _____    __  __                
+//          /\  _`\  /\  _`\  /\  _`\  /\  _  \ /\__  _\/\__  _\ /\  __`\ /\ \/\ \               
+//          \ \ \/\_\\ \ \L\ \\ \ \L\_\\ \ \L\ \\/_/\ \/\/_/\ \/ \ \ \/\ \\ \ `\\ \              
+//           \ \ \/_/_\ \ ,  / \ \  _\L \ \  __ \  \ \ \   \ \ \  \ \ \ \ \\ \ , ` \             
+//            \ \ \L\ \\ \ \\ \ \ \ \L\ \\ \ \/\ \  \ \ \   \_\ \__\ \ \_\ \\ \ \`\ \            
+//             \ \____/ \ \_\ \_\\ \____/ \ \_\ \_\  \ \_\  /\_____\\ \_____\\ \_\ \_\           
+//              \/___/   \/_/\/ / \/___/   \/_/\/_/   \/_/  \/_____/ \/_____/ \/_/\/_/           
+//                 ______  _____    _____    __                                                  
+//                /\__  _\/\  __`\ /\  __`\ /\ \                                                 
+//                \/_/\ \/\ \ \/\ \\ \ \/\ \\ \ \                                                
+//                   \ \ \ \ \ \ \ \\ \ \ \ \\ \ \  __                                           
+//                    \ \ \ \ \ \_\ \\ \ \_\ \\ \ \L\ \                                          
+//                     \ \_\ \ \_____\\ \_____\\ \____/                                          
+//                      \/_/  \/_____/ \/_____/ \/___/                                           
 //   __                            ___                             
 //  /\ \__  __                    /\_ \    __                      
 //  \ \ ,_\/\_\    ___ ___      __\//\ \  /\_\    ___      __      
@@ -16,7 +37,13 @@
 //                              \/_/                  \/___/       
 // 
 // =======================================================================
+console.log('%cCanvas width is ' + view.size.width, 'font-size:20px;background-color:orange');
+console.log('%cCanvas height is ' + view.size.height, 'font-size:20px;background-color:orange');
+// =======================================================================
+// =======================================================================
 // Load Canvas
+// =======================================================================
+	// paper.view.center = view.center;
 // =======================================================================
 //         _____  ____   __     ___    _____  __  __               
 //        / ___/ / __ \ / /    /   |  / ___/ / / / /               
@@ -101,16 +128,22 @@
 // 		group7.rotate(0.8, point1);
 // 		group8.rotate(0.6, point1);
 // 	}
+
+function onMouseMove(event) {
+	// point1 = event.point;
+		splashText.position = event.point;
+		splashText.fillColor.hue += 0.5;
+}
 // =======================================================================
 // Text
 // =======================================================================
 // Create a centered text item at the center of the view:
 var splashText = new PointText({
-		point: view.bounds.topCenter,
-		justification: 'center',
-		fontSize: 20,
-		fillColor: 'yellow',
-		content: "Timeline creation tool!  Take a look \nat the input fields above this area \nand input a START YEAR \nand then an END YEAR."
+	point: view.bounds.topCenter,
+	justification: 'center',
+	fontSize: 20,
+	fillColor: 'yellow',
+	content: "Timeline creation tool!  Take a look \nat the input fields above this area \nand input a START YEAR \nand then an END YEAR."
 	});
 	splashText.fillColor = {
 		hue: Math.random() * 360,
@@ -136,12 +169,6 @@ var splashText = new PointText({
 			saturation: 1,
 			brightness: 1
 			};
-	}
-	
-	function onMouseMove(event) {
-		// point1 = event.point;
-			splashText.position = event.point;
-			splashText.fillColor.hue += 0.5;
 	}
 // =======================================================================
 //         ____   ____   ___  _       __                  

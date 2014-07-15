@@ -25,8 +25,12 @@ Parse.history.start();
 		// paper.setup('scifiCanvas');
 	};
 
+  $('.navbar-brand').click(function(){
+    window.location.reload();
+  });
+
   $('.scifi').click(function(){
-    // paper.project.clear()
+    // $('.canvas-container').empty()
     $('.navbar-toggle').click();
   });
 
@@ -35,6 +39,8 @@ Parse.history.start();
     $('.navbar-toggle').click();
     $('.orbitCanvasClass').removeClass("activated");
   })
+
+
 // =======================================================================
 	$('.save').click(function(){
 		myCanvas.toBlob(function(blob) {

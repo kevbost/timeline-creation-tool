@@ -35,7 +35,7 @@
 // =======================================================================
 // Create a centered text item at the center of the view:
 var splashText = new PointText({
-	point: view.bounds.topCenter,
+	point: view.center,
 	justification: 'center',
 	fontSize: 20,
 	fontFamily: 'Lato',
@@ -64,8 +64,8 @@ function onMouseDown(event) {
 
 function onMouseMove(event) {
 	// point1 = event.point;
-	splashText.position = event.point;
-	splashText.fillColor.hue += 0.5;
+	// splashText.position = event.point;
+	splashText.fillColor.hue += 1;
 }
 
 // =======================================================================

@@ -634,18 +634,3 @@ $('.scifi').click(function(){
 			  	paper.view.update();
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

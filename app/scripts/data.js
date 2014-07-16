@@ -34,6 +34,12 @@ var scifi = {
             "category": "scifi"
         },
         {
+            "name": "Sliders",
+            "start": "1995",
+            "end": "1999",
+            "category": "scifi"
+        },
+        {
             "name": "ENT",
             "start": "2001",
             "end": "2005",
@@ -102,14 +108,14 @@ var scifi = {
         {
             "name": "Falling Skies",
             "start": "2011",
-            "end": "2017",
+            "end": "2014",
             "category": "scifi",
             "onGoing": true
         },
         {
             "name": "Continuum",
             "start": "2012",
-            "end": "2017",
+            "end": "2014",
             "category": "scifi",
             "onGoing": true
         },
@@ -141,7 +147,7 @@ var scifi = {
         {
             "name": "Futurama",
             "start": "1999",
-            "end": "2017",
+            "end": "2014",
             "category": "scifi",
             "onGoing": true
         },
@@ -170,10 +176,24 @@ var scifi = {
             "category": "scifi"
         },
         {
+            "name": "Dr. Who",
+            "start": "2006",
+            "end": "2014",
+            "category": "scifi",
+            "onGoing": true
+        },
+        {
             "name": "Warehouse 13",
             "start": "2009",
             "end": "2014",
             "category": "scifi"
+        },    
+        {
+            "name": "Adventure Time",
+            "start": "2010",
+            "end": "2014",
+            "category": "scifi",
+            "onGoing": true
         }
     ]
 }

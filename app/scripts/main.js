@@ -35,9 +35,9 @@ Parse.history.start();
   });
 
   $('.orbit').click(function(){
-    paper.project.clear();
+    // paper.project.clear();
     $('.navbar-toggle').click();
-    $('.orbitCanvasClass').removeClass("activated");
+    // $('.orbitCanvasClass').removeClass("activated");
   })
 
 

@@ -23,11 +23,7 @@ function onMouseDown(event) {
 	};
 }
 
-function onMouseMove(event) {
-	// point1 = event.point;
-	splashText.position = event.point;
-	splashText.fillColor.hue += 0.5;
-}
+
 
 $('.go').click(function() {
 	project.clear();

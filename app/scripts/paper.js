@@ -5,10 +5,10 @@ var splashText = new PointText({
 	point: view.center,
 	justification: 'center',
 	fontSize: 20,
-	// fontFamily: 'Lato',
+	fontFamily: 'Lato',
 	fontWeight: '500',
 	blendMode: 'xor',
-	content: "\nHello, and welcome to the\nTimeline Visualization Tool!\nTake a look at the input\nfields above this area.\n\nInput a START YEAR\nand an END YEAR.\n",
+	content: "\nHello, and welcome to the\nTimeline Creation Tool!\nTake a look at the input\nfields above this area.\n\nInput a START YEAR\nand an END YEAR.\n",
 	fillColor: {
 		hue: Math.random() * 360,
 		saturation: 0.5,
@@ -23,8 +23,6 @@ var splashText = new PointText({
 var splashLayer = new Layer([splashText]);
 	splashText.fitBounds(view.bounds)
 	splashLayer.activate();
-
-
 
 
 // ================== 
@@ -103,9 +101,10 @@ function checkInputDate() {
 	var endYear			= inputDate.endYear;
 	switch (true) {
 		case (startYear >= endYear):
-			$('.notification-text').html('START YEAR should come before END YEAR.');
-			$('.notification-text').addClass('activated');
-			$('.start-year, .end-year').addClass('has-error');
+			// reportError({
+			// 	message: 'START YEAR should come before END YEAR.',
+			// 	fields: $('.start-year, .end-year')
+			// });
 		break;
 		case (startYearString.trim() === ""):
 			$('.notification-text').html('Need START YEAR.');
@@ -131,6 +130,17 @@ function checkInputDate() {
 			console.log('default switch fired, you did good grasshopper')
 	} // end switch
 } // end function checkInitialInputs(){}
+
+// function reportError(error){
+// 	$('.notification-text').html(error.message).addClass('activated');
+// 	error.fields.addClass('has-error');
+// }
+
+// function clearError(){
+// 	$('.notification-text').html('').removeClass('activated');
+// 	$('.has-error').removeClass('has-error');
+// }
+
 function initialStartHasError() {
 	$('.notification-text').addClass('activated');
 	$('.start-year').addClass('has-error');
@@ -154,7 +164,7 @@ function clicksOne() {
 
 function checkInputEvent(){
 	var eventStartString	= inputEvent.eventStartString;
-	var eventEndString		= inputEvent.eventendString;
+	var eventEndString		= inputEvent.eventEndString;
 	var eventStart			= inputEvent.eventStart;
 	var eventName			= inputEvent.eventName;
 	var eventEnd			= inputEvent.eventEnd;
@@ -175,7 +185,7 @@ function checkInputEvent(){
 			$('.notification-text').html('Need beginning year.');
 			eventStartHasError();
 		break;
-		case (inputEvent.eventEndString.trim() === ""):
+		case (eventEndString.trim() === ""):
 			$(this).data('clickNum', clickNum -= 20);
 			$('.notification-text').html('Need END year.');
 			eventEndHasError();
@@ -225,6 +235,7 @@ function eventEndHasError(){
 } // end function eventEndHasError(){
 
 function renderData() {
+	console.log('renderData fired')
 	if(inputEvent.eventRange < 1) {
 	var eventRect = new Path.Circle({
 		center: [(specs.width / inputDate.dateRange) * (inputEvent.eventStart - inputDate.startYear), ((specs.bottom - clickNum) + 7)],

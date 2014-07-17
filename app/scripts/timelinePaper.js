@@ -442,6 +442,19 @@ $('.go').click(function() {
 			strokeWidth: 3
 		});
 
+		var topPath = new Path({
+			strokeColor: '#d9534f',
+			strokeWidth: 3
+		});
+
+		topPath.add([left, (top + 50)]);
+		for (var i = 1; i < dateRange; i++) {
+			var point = new Point(width / dateRange * i, (top + 50));
+			topPath.add(point);
+		} // end for (){}
+		topPath.add([right, (top + 50)]);
+		// initializePointText();
+
 		path.add([left, (bottom - 50)]);
 		for (var i = 1; i < dateRange; i++) {
 			var point = new Point(width / dateRange * i, (bottom - 50));
@@ -453,6 +466,19 @@ $('.go').click(function() {
 
 	function initializePointText() {
 		var counter = startYear;
+
+		for (var i = 1; i < dateRange; i++) {
+			var dateList = new PointText({
+				point: [width / dateRange * i, (top + 8)],
+				content: (counter += 1),
+				fillColor: 'white'
+			})
+			dateList.rotate(300)
+			dateList.position.x -= 14;
+			dateList.position.y += 25;
+		} // end for (){}
+
+		var counter = startYear;
 		for (var i = 1; i < dateRange; i++) {
 			var dateList = new PointText({
 				point: [width / dateRange * i, (bottom - 50)],
@@ -462,14 +488,13 @@ $('.go').click(function() {
 			dateList.rotate(300)
 			dateList.position.x -= 14;
 			dateList.position.y += 25;
-
 		} // end for (){}
 		initializeReferencePaths();
 	} // end function initializePointText(){}
 
 	function initializeReferencePaths() {
 		for (var i = 1; i < dateRange; i++) {
-			var from = new Point(width / dateRange * i, 0);
+			var from = new Point(width / dateRange * i, top + 52);
 			var to = new Point(width / dateRange * i, bottom - 52);
 			var referencePath = new Path.Line(from, to);
 			referencePath.style = style;
@@ -522,10 +547,12 @@ $('.go').click(function() {
 			// =================================================
 			// if statement for putting a cap on allowed events.
 			// =================================================
-			// if (((clickOne + 1) / 2) > view.size.height / 21.5) {
-			// 	alert(clickOne + ' individual events is the most that this graph can display');
-			// 	$('.add').prop( "disabled", true);
-			// }
+			if (((clickOne + 1) / 2) > (view.size.height - 104) / 20) {
+				$('.notification-text').html(clickOne + ' is the total number of points that this graph can display.');
+				$('.add').prop( "disabled", true);
+				// $('.notification-text').html('START YEAR should come before END YEAR.');
+				$('.notification-text').addClass('activated');
+			}
 			// ===================================
 		} // function clicksOne(){}
 		clicksOne();
@@ -669,6 +696,47 @@ $('.go').click(function() {
 		//  \_,_/ \_,_/ \__/ \_,_/ /_/    \___//_//_//_/\__/      
 		//                                                        
 		function renderData() {
+			$('.notification-text').removeClass('activated');
+			var dataPointRangeCounter = dataPointRange;
+
+			// ================================================================================================
+			// dataPoint Name
+			// ================================================================================================
+			var dataPointNameListing = new PointText(5, (bottom - clickNum));
+				dataPointNameListing.content = dataPointName;
+				dataPointNameListing.fillColor = 'white';
+				dataPointNameListing.position.y += 14;
+
+			// ================================================================================================
+			// dataPoint Background
+			// ================================================================================================
+			var dataPointNameListingLayerBG = new Layer();
+			var dataPointNameListingBG = new Rectangle(
+				new Point(0, (bottom - clickNum)),
+				new Size(dataPointNameListing.bounds.width + 7, 20)
+			);
+			var path = new Path.Rectangle(dataPointNameListingBG);
+				path.fillColor = '#333333';
+				// path.fillColor = 'green';
+				dataPointNameListingLayerBG.activate()
+
+
+
+			// ================================================================================================
+			// dataPoint Reference Path Dashed
+			// ================================================================================================
+			var dataPointReference = new Path();
+				dataPointReference.add(new Point(dataPointNameListing.bounds.width + 10, bottom - clickNum) + 10);
+				dataPointReference.add(new Point(right, bottom - clickNum) + 10);
+				dataPointReference.fillColor = "white";
+				dataPointReference.strokeColor = [0.5];
+				dataPointReference.strokeWidth = 3;
+				dataPointReference.dashArray = [10, 4];
+
+
+			// ================================================================================================
+			// dataPoint Event
+			// ================================================================================================
 			if (dataPointRange < 1) {
 				var dataPointRect = new Path.Circle({
 					center: [(width / dateRange) * (dataPointStart - startYear), ((bottom - clickNum) + 10)],
@@ -695,15 +763,8 @@ $('.go').click(function() {
 				// end path.fillColor = 'white';
 			}
 
-			$('.notification-text').removeClass('activated');
-			var dataPointRangeCounter = dataPointRange;
-			// ================================================================================================
-			// dataPointRect
-			// ================================================================================================
-			var dataPointNameListing = new PointText(0, (bottom - clickNum));
-			dataPointNameListing.content = dataPointName;
-			dataPointNameListing.fillColor = 'white';
-			dataPointNameListing.position.y += 14;
+			var dataPointNameListingLayer = new Layer(dataPointNameListing);
+
 			// ==================================== 
 			// CONSOLE.LOG DATA ENTRIES
 			// ================================================================================================

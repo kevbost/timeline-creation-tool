@@ -19,6 +19,7 @@ var splashText = new PointText({
 	}
 });
 
+
 // ================== 
 // LAYER 01
 // ================== 
@@ -259,7 +260,10 @@ function clicksOne() {
 		$('.notification-text').addClass('activated');
 	}
 
-} // function clicksOne(){}
+}
+
+
+
 
 // /////////////////
 // /////////////////
@@ -287,6 +291,9 @@ function renderGuide() {
 	paper.view.draw();
 	renderGuideText();
 } // end function initializePath() {}
+
+
+
 
 function renderGuideText(){
 	var startYear = inputDate.startYear;
@@ -319,8 +326,10 @@ function renderGuideText(){
 	guideTextLayer = new Layer([guideText])
 	paper.view.draw();
 	renderReferencePaths()
-	// initializeReferencePaths();
 }
+
+
+
 
 function renderReferencePaths(){
 	var dateRange = inputDate.dateRange;
@@ -336,9 +345,13 @@ function renderReferencePaths(){
 	paper.view.draw();
 }
 
-// /////////////////
-// /////////////////
-// /////////////////
+// /////////////////\\\\\\\\\\\\\\\\
+// /////////////////\\\\\\\\\\\\\\\\
+// /////////////////\\\\\\\\\\\\\\\\
+
+
+
+
 function renderEventName(){
 	var eventName = inputEvent.eventName;
 
@@ -373,6 +386,9 @@ function renderEventName(){
 	eventNameLayer = new Layer(eventNameText)
 	paper.view.draw()
 }
+
+
+
 
 function renderData(){
 	var eventRange = inputEvent.eventRange;
@@ -447,8 +463,6 @@ $('.scifi').click(function(){
 	var startYearString = $('.startYear').val('1986');
 	var endYearString = $('.endYear').val('2014');
 	
-	// var eventName = inputEvent.eventName;
-
 	$('.go').click();
 	// inputDate = new InputDate(startYearString, endYearString);
 

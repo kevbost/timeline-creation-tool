@@ -12,6 +12,8 @@ Parse.initialize("kIv6nAYjGwfyFF9yozhchl8NC6jVcpViAvQZt8eU", "iax0nms3DbkYo4YG7E
 var appView;
 var scifi;
 var paperView;
+var inputDate;
+var inputEvent;
 
 new AppRouter();
 Parse.history.start();

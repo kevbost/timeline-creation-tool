@@ -14,7 +14,9 @@ var splashText = new PointText({
 		saturation: 0.5,
 		brightness: 1
 	},
-	onMouseMove: function() { splashText.fillColor.hue += 1; }
+	onMouseMove: function() {
+		splashText.fillColor.hue += 1;
+	}
 });
 
 // ================== 
@@ -25,132 +27,222 @@ var splashLayer = new Layer([splashText]);
 	splashLayer.activate();
 
 
+
 // ================== 
 // Variables
 // ================== 
 var clickNum = 0;
 var clickOne = 0;
+// ==============
+var width = view.size.width;
+var height = view.size.height;
+var center = view.center;
+var top = view.bounds.top;
+var left = view.bounds.left;
+var right = view.bounds.right;
+var bottom = view.bounds.bottom;
+
+// // ======================================================================
 
 
-var specs = {
-	width: view.size.width,
-	height: view.size.height,
-	center: view.center,
-	top: view.bounds.top,
-	left: view.bounds.left,
-	right: view.bounds.right,
-	bottom: view.bounds.bottom
+
+// ================== 
+// Constructors
+// ================== 
+function InputDate(startYearStringVar, endYearStringVar) {
+	this.startYearString = startYearStringVar;
+	this.endYearString = endYearStringVar;
+	this.startYear = parseInt(startYearStringVar);
+	this.endYear = parseInt(endYearStringVar);
+	this.dateRange = this.endYear - this.startYear;
 }
 
-var inputDate = {
-	startYearString: undefined,
-	endYearString: undefined,
-	startYear: 0,
-	endYear: 0,
-	dateRange: 0,
-	convert: function() {
-		this.startYear = parseInt(this.startYearString);
-		this.endYear = parseInt(this.endYearString);
-		this.dateRange = this.endYear - this.startYear;
-			console.log('startYear:', this.startYear)
-			console.log('endYear:', this.endYear)
-			console.log('dateRange:', this.dateRange)
-		checkInputDate();
-	}
+function InputEvent(eventNameVar, eventStartStringVar, eventEndStringVar) {
+	this.eventName = eventNameVar;
+	this.eventStartString = eventStartStringVar;
+	this.eventEndString = eventEndStringVar;
+	this.eventStart = parseInt(eventStartStringVar);
+	this.eventEnd = parseInt(eventEndStringVar);
+	this.eventRange = this.eventEnd - this.eventStart;
 }
 
-var inputEvent = {
-	eventName: undefined,
-	eventStartString: undefined,
-	eventEndString: undefined,
-	eventStart: 0,
-	eventEnd: 0,
-	eventRange: 0,
-	convert: function() {
-		this.eventStart = parseInt(this.eventStartString);
-		this.eventEnd = parseInt(this.eventEndString);
-		this.eventRange = this.eventEnd - this.eventStart;
-			console.log('eventName:', this.eventName)
-			console.log('eventStart:', this.eventStart)
-			console.log('eventEnd:', this.eventEnd)
-			console.log('eventRange:', this.eventRange)
-		checkInputEvent();
-	}
-}
+
 
 // ================== 
 // Global Paper Basics
 // ================== 
 var path = new Path({
-	strokeColor: [0.8], // Aka 80% Black
-	strokeCap: 'square'
+	strokeColor: '#d9534f',
+	strokeWidth: 3
 });
 
-var referencePath = new Path({
-	strokeColor: [0.8],
-	strokeCap: 'square'
+var guidePathTop = new Path({
+	strokeColor: '#d9534f',
+	strokeWidth: 3
 });
+
+var guidePathBottom = new Path({
+	strokeColor: '#d9534f',
+	strokeWidth: 3
+});
+
+var style = {
+	strokeColor: [0.3],
+	strokeWidth: 2,
+	fontSize: 20
+};
+
 
 // ================== 
 // Functions
 // ================== 
 function checkInputDate() {
-	var startYearString	= inputDate.startYearString;
-	var endYearString	= inputDate.endYearString;
-	var startYear		= inputDate.startYear;
-	var endYear			= inputDate.endYear;
+	var startYearString = inputDate.startYearString;
+	var endYearString = inputDate.endYearString;
+	var startYear = inputDate.startYear;
+	var endYear = inputDate.endYear;
+
+
 	switch (true) {
 		case (startYear >= endYear):
-			// reportError({
-			// 	message: 'START YEAR should come before END YEAR.',
-			// 	fields: $('.start-year, .end-year')
-			// });
-		break;
+			reportError({
+				message: 'START YEAR should come before END YEAR.',
+				add: $('.start-year'),
+				remove: $('.end-year')
+			});
+			break;
 		case (startYearString.trim() === ""):
-			$('.notification-text').html('Need START YEAR.');
-			initialStartHasError();
-		break;
+			reportError({
+				message: 'Need START YEAR.',
+				add: $('.start-year'),
+				remove: $('.end-year')
+			});
+			break;
 		case (endYearString.trim() === ""):
-			$('.notification-text').html('Need END YEAR.');
-			initialEndHasError();
-		break;
+			reportError({
+				message: 'Need END YEAR.',
+				add: $('.end-year'),
+				remove: $('.start-year')
+			});
+			break;
 		case (startYear < 1000):
-			$('.notification-text').html('Year needs to match YYYY');
-			initialStartHasError();
-		break;
+			reportError({
+				message: 'Year needs to match YYYY',
+				add: $('.start-year'),
+				remove: $('.end-year')
+			});
+			break;
 		case (endYear < 1000):
-			$('.notification-text').html('Year needs to match YYYY');
-			initialEndHasError();
-		break;
+			reportError({
+				message: 'Year needs to match YYYY',
+				add: $('.end-year'),
+				remove: $('.start-year')
+			});
+			break;
 		default:
-			$('.notification-text, .start-year, .end-year').removeClass('activated');
 			$('.input-dates, .input-events').addClass('activated');
 			splashLayer.visible = false;
+			console.log('default switch fired, you did real good there grasshopper');
+			clearError()
 			paper.view.draw()
-			console.log('default switch fired, you did good grasshopper')
+			renderGuide()
 	} // end switch
-} // end function checkInitialInputs(){}
+} // end function checkInputDate(){}
 
-// function reportError(error){
-// 	$('.notification-text').html(error.message).addClass('activated');
-// 	error.fields.addClass('has-error');
-// }
+function checkInputEvent() {
+	var eventStartString = inputEvent.eventStartString;
+	var eventEndString = inputEvent.eventEndString;
+	var eventStart = inputEvent.eventStart;
+	var eventName = inputEvent.eventName;
+	var eventEnd = inputEvent.eventEnd;
+	var endYear = inputDate.endYear;
 
-// function clearError(){
-// 	$('.notification-text').html('').removeClass('activated');
-// 	$('.has-error').removeClass('has-error');
-// }
+	switch (true) {
+		case (eventName.trim() === ""):
+			$(this).data('clickNum', clickNum -= 20);
+			reportError({
+				message: 'Please enter a name of your new Event.',
+				add: $('.event-name'),
+				remove: $('.event-start, .event-end')
+			});
+			break;
+		case (eventEnd < 1000):
+			$(this).data('clickNum', clickNum -= 20);
+			reportError({
+				message: 'END needs to match YYYY.',
+				add: $('.event-end'),
+				remove: $('.event-start, .event-name')
+			});
+			break;
+		case (eventStartString.trim() === ""):
+			$(this).data('clickNum', clickNum -= 20);
+			reportError({
+				message: 'Need event START year.',
+				add: $('.event-start'),
+				remove: $('.event-end, .event-name')
+			});
+			break;
+		case (eventEndString.trim() === ""):
+			$(this).data('clickNum', clickNum -= 20);
+			reportError({
+				message: 'Need event END year.',
+				add: $('.event-end'),
+				remove: $('.event-start, .event-name')
+			});
+			break;
+		case (eventEnd > endYear):
+			$(this).data('clickNum', clickNum -= 20);
+			reportError({
+				message: 'END should be before the graph\'s end year.',
+				add: $('.event-end'),
+				remove: $('.event-start, .event-name')
+			});
+			break;
+		case (eventStart < 1000):
+			$(this).data('clickNum', clickNum -= 20);
+			reportError({
+				message: 'START needs to match YYYY.',
+				add: $('.event-start'),
+				remove: $('.event-end, .event-name')
+			});
+			break;
+		case (eventStart < inputDate.startYear):
+			$(this).data('clickNum', clickNum -= 20);
+			reportError({
+				message: 'START should be after the graph\'s start year.',
+				add: $('.event-start'),
+				remove: $('.event-end, .event-name')
+			});
+			break;
+		case (eventStart > eventEnd):
+			$(this).data('clickNum', clickNum -= 20);
+			reportError({
+				message: 'START needs be before END',
+				add: $('.event-start'),
+				remove: $('.event-end, .event-name')
+			});
+			break;
+		default:
+			clearError();
+			renderEventName();
+	} // end switch
+} // end function checkInputEvent(){
 
-function initialStartHasError() {
-	$('.notification-text').addClass('activated');
-	$('.start-year').addClass('has-error');
-	$('.end-year').removeClass('has-error');
-} // end function initialStartHasError(){}
-function initialEndHasError() {
-	$('.notification-text').addClass('activated');
-	$('.end-year').addClass('has-error');
-	$('.start-year').removeClass('has-error');
-} // end function initialEndHasError (){}
+function reportError(error) {
+	$('.notification-text').html(error.message).addClass('activated');
+	error.add.addClass('has-error');
+	error.remove.removeClass('has-error');
+}
+
+function clearError() {
+	$('.notification-text').html('').removeClass('activated');
+	$('.has-error').removeClass('has-error');
+}
+
+// /////////////////
+// /////////////////
+// /////////////////
+
 function clickNums() {
 	if (!clickNum) clickNum = +52;
 	$(this).data('clickNum', clickNum += 20);
@@ -158,158 +250,205 @@ function clickNums() {
 function clicksOne() {
 	if (!clickOne) clickOne = 0;
 	$(this).data('clickOne', clickOne += 1);
+
+	if (clickOne === ((clickOne + 1) / 2) > (height - 104) / 20) {
+		$('.notification-text').html(clickOne + ' is the total number of points that this graph can display.');
+		$('.add').prop( "disabled", true);
+		// $('.notification-text').html('START YEAR should come before END YEAR.');
+		$('.notification-text').addClass('activated');
+	}
+
 } // function clicksOne(){}
 
+// /////////////////
+// /////////////////
+// /////////////////
+
+function renderGuide() {
+	var dateRange = inputDate.dateRange;
+
+	guidePathTop.add([left, (top + 50)]);
+	for (var i = 1; i < dateRange; i++) {
+		var point = new Point(width / dateRange * i, (top + 50));
+		guidePathTop.add(point);
+		} // end for (){}
+	guidePathTop.add([right, (top + 50)]);
+
+	guidePathBottom.add([left, (bottom - 50)]);
+	for (var i = 1; i < dateRange; i++) {
+		var point = new Point(width / dateRange * i, (bottom - 50));
+		guidePathBottom.add(point);
+		} // end for (){}
+	guidePathBottom.add([right, (bottom - 50)]);
 
 
-function checkInputEvent(){
-	var eventStartString	= inputEvent.eventStartString;
-	var eventEndString		= inputEvent.eventEndString;
-	var eventStart			= inputEvent.eventStart;
-	var eventName			= inputEvent.eventName;
-	var eventEnd			= inputEvent.eventEnd;
+	guidePathLayer = new Layer([guidePathBottom, guidePathTop])
+	paper.view.draw();
+	renderGuideText();
+} // end function initializePath() {}
 
-	switch (true) {
-		case (eventName.trim() === ""):
-			$(this).data('clickNum', clickNum -= 20);
-			$('.notification-text').html('Please enter a name of your new data point.');
-			eventNameHasError();
-		break;
-		case (eventEnd < 1000):
-			$(this).data('clickNum', clickNum -= 20);
-			$('.notification-text').html('END needs to match YYYY');
-			eventEndHasError();
-		break;
-		case (eventStartString.trim() === ""):
-			$(this).data('clickNum', clickNum -= 20);
-			$('.notification-text').html('Need beginning year.');
-			eventStartHasError();
-		break;
-		case (eventEndString.trim() === ""):
-			$(this).data('clickNum', clickNum -= 20);
-			$('.notification-text').html('Need END year.');
-			eventEndHasError();
-		break;
-		case (eventEnd > inputDate.endYear):
-			$(this).data('clickNum', clickNum -= 20);
-			$('.notification-text').html('END should be before the graph\'s end year.');
-			eventEndHasError();
-		break;
-		case (eventStart < 1000):
-			$(this).data('clickNum', clickNum -= 20);
-			$('.notification-text').html('Year needs to match YYYY');
-			eventStartHasError();
-		break;
-		case (eventStart < inputDate.startYear):
-			$(this).data('clickNum', clickNum -= 20);
-			$('.notification-text').html('START should be after the graph\'s start year.');
-			eventStartHasError();
-		break;
-		case (eventStart > eventEnd):
-			$(this).data('clickNum', clickNum -= 20);
-			$('.notification-text').html('START needs to be a year before END');
-			eventStartHasError();
-			$('.event-end').addClass('has-error');
-		break;
-		default:
-			$('.notification-text').removeClass('activated');
-			$('.event-start, .event-name, .event-end').removeClass('has-error');
-			console.log('default switch fired, you did good grasshopper')
-			renderData();
-	} // end switch
-} // end function checkInputEvent(){
-function eventNameHasError(){
-	$('.notification-text').addClass('activated');
-	$('.event-name').addClass('has-error');
-	$('.event-start, .event-end').removeClass('has-error');
-} // end function nameHasError(){
-function eventStartHasError(){
-	$('.notification-text').addClass('activated');
-	$('.event-start').addClass('has-error');
-	$('.event-name, .event-end').removeClass('has-error');
-} // end function eventStartHasError(){
-function eventEndHasError(){
-	$('.notification-text').addClass('activated');
-	$('.event-end').addClass('has-error');
-	$('.event-name, .event-start').removeClass('has-error');
-} // end function eventEndHasError(){
+function renderGuideText(){
+	var startYear = inputDate.startYear;
+	var dateRange = inputDate.dateRange;
 
-function renderData() {
-	console.log('renderData fired')
-	if(inputEvent.eventRange < 1) {
-	var eventRect = new Path.Circle({
-		center: [(specs.width / inputDate.dateRange) * (inputEvent.eventStart - inputDate.startYear), ((specs.bottom - clickNum) + 7)],
-		radius: 10,
-		fillColor: {
-			hue: Math.random() * 360,
-			saturation: 0.5,
-			brightness: 1 }
+	var counter = startYear;
+	for (var i = 1; i < dateRange; i++) {
+		var guideText = new PointText({
+			point: [width / dateRange * i, (top + 8)],
+			content: (counter += 1),
+			fillColor: 'white'
 		})
-	} else {
-	var dataPointRect = new Rectangle(
-		new Point((specs.width / inputDate.dateRange) * (inputEvent.eventStart - inputDate.startYear), (specs.bottom - clickNum)),
-		new Size(((specs.width / inputDate.dateRange) * inputEvent.eventRange), 20)
+		guideText.rotate(300);
+	 guideText.position.x -= 14;
+	 guideText.position.y += 25;
+	} // end for (){}
+
+	var counter = startYear;
+	for (var i = 1; i < dateRange; i++) {
+		var guideText = new PointText({
+			point: [width / dateRange * i, (bottom - 50)],
+			content: (counter += 1),
+			fillColor: 'white'
+		})
+		guideText.rotate(300);
+	 guideText.position.x -= 14;
+	 guideText.position.y += 25;
+	} // end for (){}
+
+	guideTextLayer = new Layer([guideText])
+	paper.view.draw();
+	renderReferencePaths()
+	// initializeReferencePaths();
+}
+
+function renderReferencePaths(){
+	var dateRange = inputDate.dateRange;
+	
+	for (var i = 1; i < dateRange; i++) {
+		var from = new Point(width / dateRange * i, top + 52);
+		var to = new Point(width / dateRange * i, bottom - 52);
+		var referencePath = new Path.Line(from, to);
+		referencePath.style = style;
+		// referencePath.strokeColor = 'black'
+	} // end for (){}
+	referencePathsLayer = new Layer(referencePath);
+	paper.view.draw();
+}
+
+// /////////////////
+// /////////////////
+// /////////////////
+function renderEventName(){
+	var eventName = inputEvent.eventName;
+
+	var eventNameText = new PointText(5, (bottom - clickNum));
+		eventNameText.content = eventName;
+		eventNameText.fillColor = 'white';
+		eventNameText.position.y += 14;
+
+	eventNameLayerBG = new Layer()
+	var eventNameReferenceBG = new Rectangle(
+		new Point(0, (bottom - clickNum)),
+		new Size(eventNameText.bounds.width + 7, 20)
 	);
-	var path = new Path.Rectangle(dataPointRect);
-	path.fillColor = {
-		hue: Math.random() * 360,
-		saturation: 1,
-		brightness: 1
-	};
-	// end path.fillColor = 'white';
+	var pathBG = new Path.Rectangle(eventNameReferenceBG);
+		pathBG.fillColor = '#333333';
+		// pathBG.fillColor = 'green';
+	eventNameLayerBG.activate()
+
+	var eventReferencePath = new Path();
+		eventReferencePath.add(new Point(eventNameText.bounds.width, bottom - clickNum) + 10);
+		eventReferencePath.add(new Point(right, bottom - clickNum) + 10);
+		eventReferencePath.fillColor = "white";
+		eventReferencePath.strokeColor = [0.5];
+		eventReferencePath.strokeWidth = 1;
+		eventReferencePath.dashArray = [5, 5];
+
+	eventNameLayer = new Layer(eventNameText)
+	renderData();
 }
+
+function renderData(){
+	var eventRange = inputEvent.eventRange;
+	var eventStart = inputEvent.eventStart;
+	var dateRange = inputDate.dateRange;
+	var startYear = inputDate.startYear;
+
+	console.log('renderData fired');
+	if (eventRange < 1) {
+		var eventRect = new Path.Circle({
+			center: [(width / dateRange) * (eventStart - startYear), ((bottom - clickNum) + 7)],
+			radius: 10
+			})
+			eventRect.fillColor = {
+				hue: Math.random() * 360,
+				saturation: 0.5,
+				brightness: 1
+			}
+		console.log('Fin')
+		paper.view.draw()
+	} else {
+		var eventRect = new Rectangle(
+			new Point((width / dateRange) * (eventStart - startYear), (bottom - clickNum)),
+			new Size(((width / dateRange) * eventRange), 20)
+		);
+		var eventRectPath = new Path.Rectangle(eventRect);
+			eventRectPath.fillColor = {
+				hue: Math.random() * 360,
+				saturation: 1,
+				brightness: 1
+			};
+		console.log('Fin')
+		eventRectLayer = new Layer(eventRectPath)
+		paper.view.draw()
+	}
 }
+
+
+
 
 // ================== 
 // Buttons
 // ================== 
 $('.go').click(function() {
-	// variables
-	inputDate.startYearString = $('.startYear').val();
-	inputDate.endYearString = $('.endYear').val();
-	inputDate.convert();
+	var startYearString = $('.startYear').val();
+	var endYearString = $('.endYear').val();
+	inputDate = new InputDate(startYearString, endYearString);
+	console.log(inputDate)
+	checkInputDate()
+
 })
+
 $('.add').click(function() {
-	// varables
-	inputEvent.eventName = $('.event-name-input').val();
-	inputEvent.eventEndString = $('.event-end-input').val();
-	inputEvent.eventStartString = $('.event-start-input').val();
-	inputEvent.convert();
-	console.log("inputEvent is", inputEvent)
-	
+	var eventName = $('.event-name-input').val();
+	var eventStartString = $('.event-start-input').val();
+	var eventEndString = $('.event-end-input').val();
+
+	inputEvent = new InputEvent(eventName, eventStartString, eventEndString)
+	// console.log(inputEvent.eventName)
+	checkInputEvent()
+
 	clickNums()
 	clicksOne()
 	console.log("clickOne:", clickOne, ", clickNum:", clickNum);
-
-	// console.log(inputEvent)
+	if (clickOne === (view.size.height - 104) / 20){
+		$('.notification-text').html(clickOne + ' is the total number of points that this graph can display.');
+		$('.add').prop( "disabled", true);
+		// $('.notification-text').html('START YEAR should come before END YEAR.');
+		$('.notification-text').addClass('activated');
+	}
+	// console.log(view.size.height - 104) / 20)
+	// console.log(project.layers)
 	// console.log(project.activeLayer)
+	console.log(foo)
 })
 
+$('.scifi').click(function(){
+	// guidePathLayer.visible = false;
+	// guideTextLayer.visible = false;
+	// referencePathsLayer.visible = false;
+	// eventNameLayerBG.visible = false;
+	// eventNameLayer.visible = false;
+	// eventRectLayer.visible = false;
 
-
-
-
-
-
-
-// function consoleLog() {
-// 	console.log(inputDate)
-// 	console.log(project.activeLayer)
-// }
-
-// var fs = require('fs')
-// var myNumber = undefined
-
-// function addOne(callback) {
-//   fs.readFile('number.txt', function doneReading(err, fileContents) {
-//     myNumber = parseInt(fileContents)
-//     myNumber++
-//     callback()
-//   })
-// }
-
-// function logMyNumber() {
-//   console.log(myNumber)
-// }
-
-// addOne(logMyNumber)
+})

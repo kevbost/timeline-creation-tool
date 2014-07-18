@@ -5,8 +5,8 @@ var splashText = new PointText({
 	point: view.center,
 	justification: 'center',
 	fontSize: 20,
-	fontFamily: 'Lato',
-	fontWeight: '500',
+	// fontFamily: 'Lato',
+	// fontWeight: '500',
 	blendMode: 'xor',
 	content: "\nHello, and welcome to the\nTimeline Creation Tool!\nTake a look at the input\nfields above this area.\n\nInput a START YEAR\nand an END YEAR.\n",
 	fillColor: {
@@ -24,6 +24,7 @@ var splashText = new PointText({
 // ================== 
 var splashLayer = new Layer([splashText]);
 	splashText.fitBounds(view.bounds)
+	paper.view.draw()
 	splashLayer.activate();
 
 
@@ -329,7 +330,7 @@ function renderReferencePaths(){
 		var to = new Point(width / dateRange * i, bottom - 52);
 		var referencePath = new Path.Line(from, to);
 		referencePath.style = style;
-		// referencePath.strokeColor = 'black'
+		referencePath.strokeColor = 'black'
 	} // end for (){}
 	referencePathsLayer = new Layer(referencePath);
 	paper.view.draw();
@@ -341,7 +342,7 @@ function renderReferencePaths(){
 function renderEventName(){
 	var eventName = inputEvent.eventName;
 
-	var eventNameText = new PointText(5, (bottom - clickNum));
+	var eventNameText = new PointText(5, (bottom - clickNum) + 1);
 		eventNameText.content = eventName;
 		eventNameText.fillColor = 'white';
 		eventNameText.position.y += 14;
@@ -351,10 +352,13 @@ function renderEventName(){
 		new Point(0, (bottom - clickNum)),
 		new Size(eventNameText.bounds.width + 7, 20)
 	);
-		eventNameReferenceBG.blendMode = 'xor';
 	var pathBG = new Path.Rectangle(eventNameReferenceBG);
 		pathBG.fillColor = '#333333';
-		// pathBG.fillColor = 'green';
+			// var blends = ['normal', 'multiply', 'screen', 'overlay', 'soft-light', 'hard-light', 'color-dodge', 'color-burn', 'darken', 
+			// 				'lighten', 'difference', 'exclusion', 'hue', 'saturation', 'luminosity', 'color', 'add', 'subtract', 'average', 
+			//				'pin-light', 'negation', 'source-over', 'source-in', 'source-out', 'source-atop', 'destination-over', 'destination-in', 
+			// 				'destination-out', 'destination-atop', 'lighter', 'darker', 'copy', 'xor']
+		pathBG.blendMode = 'hard-light'
 	eventNameLayerBG.activate()
 
 	var eventReferencePath = new Path();
@@ -364,6 +368,7 @@ function renderEventName(){
 		eventReferencePath.strokeColor = [0.5];
 		eventReferencePath.strokeWidth = 1;
 		eventReferencePath.dashArray = [5, 5];
+		eventReferencePath.blendMode = 'hard-light'
 
 	eventNameLayer = new Layer(eventNameText)
 	paper.view.draw()
@@ -428,15 +433,11 @@ $('.add').click(function() {
 	clickNums()
 	clicksOne()
 	console.log("clickOne:", clickOne, ", clickNum:", clickNum);
-	if (clickOne === (view.size.height - 104) / 20){
+	if (clickOne === (view.size.height - 84) / 20){
 		$('.notification-text').html(clickOne + ' is the total number of points that this graph can display.');
 		$('.add').prop( "disabled", true);
-		// $('.notification-text').html('START YEAR should come before END YEAR.');
 		$('.notification-text').addClass('activated');
 	}
-	// console.log(view.size.height - 104) / 20)
-	// console.log(project.layers)
-	// console.log(project.activeLayer)
 })
 
 $('.scifi').click(function(){

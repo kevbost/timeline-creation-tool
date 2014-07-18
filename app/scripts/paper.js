@@ -224,7 +224,7 @@ function checkInputEvent() {
 			break;
 		default:
 			clearError();
-			renderEventName();
+			renderData()
 	} // end switch
 } // end function checkInputEvent(){
 
@@ -351,6 +351,7 @@ function renderEventName(){
 		new Point(0, (bottom - clickNum)),
 		new Size(eventNameText.bounds.width + 7, 20)
 	);
+		eventNameReferenceBG.blendMode = 'xor';
 	var pathBG = new Path.Rectangle(eventNameReferenceBG);
 		pathBG.fillColor = '#333333';
 		// pathBG.fillColor = 'green';
@@ -365,7 +366,7 @@ function renderEventName(){
 		eventReferencePath.dashArray = [5, 5];
 
 	eventNameLayer = new Layer(eventNameText)
-	renderData();
+	paper.view.draw()
 }
 
 function renderData(){
@@ -374,7 +375,6 @@ function renderData(){
 	var dateRange = inputDate.dateRange;
 	var startYear = inputDate.startYear;
 
-	console.log('renderData fired');
 	if (eventRange < 1) {
 		var eventRect = new Path.Circle({
 			center: [(width / dateRange) * (eventStart - startYear), ((bottom - clickNum) + 7)],
@@ -385,7 +385,6 @@ function renderData(){
 				saturation: 0.5,
 				brightness: 1
 			}
-		console.log('Fin')
 		paper.view.draw()
 	} else {
 		var eventRect = new Rectangle(
@@ -398,9 +397,9 @@ function renderData(){
 				saturation: 1,
 				brightness: 1
 			};
-		console.log('Fin')
 		eventRectLayer = new Layer(eventRectPath)
 		paper.view.draw()
+		renderEventName();
 	}
 }
 
@@ -414,9 +413,8 @@ $('.go').click(function() {
 	var startYearString = $('.startYear').val();
 	var endYearString = $('.endYear').val();
 	inputDate = new InputDate(startYearString, endYearString);
-	console.log(inputDate)
+	// console.log(inputDate)
 	checkInputDate()
-
 })
 
 $('.add').click(function() {
@@ -425,7 +423,6 @@ $('.add').click(function() {
 	var eventEndString = $('.event-end-input').val();
 
 	inputEvent = new InputEvent(eventName, eventStartString, eventEndString)
-	// console.log(inputEvent.eventName)
 	checkInputEvent()
 
 	clickNums()
@@ -440,15 +437,27 @@ $('.add').click(function() {
 	// console.log(view.size.height - 104) / 20)
 	// console.log(project.layers)
 	// console.log(project.activeLayer)
-	console.log(foo)
 })
 
 $('.scifi').click(function(){
-	// guidePathLayer.visible = false;
-	// guideTextLayer.visible = false;
-	// referencePathsLayer.visible = false;
-	// eventNameLayerBG.visible = false;
-	// eventNameLayer.visible = false;
-	// eventRectLayer.visible = false;
+	project.clear();
+	paper.view.draw();
 
+	var startYearString = $('.startYear').val('1986');
+	var endYearString = $('.endYear').val('2014');
+	
+	// var eventName = inputEvent.eventName;
+
+	$('.go').click();
+	// inputDate = new InputDate(startYearString, endYearString);
+
+	for (i = 0; i < scifi.results.length; i++){
+		// inputEvent = new InputEvent(eventName, eventStartString, eventEndString)
+		var eventName = $('.event-name-input').val(scifi.results[i].name);
+		console.log(scifi.results[i].name)
+		var eventStartString = $('.event-start-input').val(scifi.results[i].start);
+		var eventEndString = $('.event-end-input').val(scifi.results[i].end);
+		$('.add').click();
+	}
+	paper.view.draw();
 })

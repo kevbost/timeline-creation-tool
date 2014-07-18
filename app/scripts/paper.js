@@ -8,7 +8,7 @@ var splashText = new PointText({
 	// fontFamily: 'Lato',
 	// fontWeight: '500',
 	blendMode: 'xor',
-	content: "\nHello, and welcome to the\nTimeline Creation Tool!\nTake a look at the input\nfields above this area.\n\nInput a START YEAR\nand an END YEAR.\n",
+	content: "\nTIMELINE CREATION TOOL\n\nInput a START YEAR\nand an END YEAR.\n",
 	fillColor: {
 		hue: Math.random() * 360,
 		saturation: 0.5,
@@ -33,7 +33,7 @@ var splashLayer = new Layer([splashText]);
 // ================== 
 // Variables
 // ================== 
-var clickNum = 0;
+var clickNum = 72;
 var clickOne = 0;
 // ==============
 var width = view.size.width;
@@ -246,20 +246,19 @@ function clearError() {
 // /////////////////
 
 function clickNums() {
-	if (!clickNum) clickNum = +52;
+	if (!clickNum) clickNum = 52;
 	$(this).data('clickNum', clickNum += 20);
 } // end function clickNums(){}
 function clicksOne() {
 	if (!clickOne) clickOne = 0;
 	$(this).data('clickOne', clickOne += 1);
 
-	if (clickOne === ((clickOne + 1) / 2) > (height - 104) / 20) {
+	if (clickOne === ((clickOne + 1) / 2) > (height - 80) / 20) {
 		$('.notification-text').html(clickOne + ' is the total number of points that this graph can display.');
 		$('.add').prop( "disabled", true);
 		// $('.notification-text').html('START YEAR should come before END YEAR.');
 		$('.notification-text').addClass('activated');
 	}
-
 }
 
 
@@ -398,7 +397,7 @@ function renderData(){
 
 	if (eventRange < 1) {
 		var eventRect = new Path.Circle({
-			center: [(width / dateRange) * (eventStart - startYear), ((bottom - clickNum) + 7)],
+			center: [(width / dateRange) * (eventStart - startYear), ((bottom - clickNum) + 10)],
 			radius: 10
 			})
 			eventRect.fillColor = {
@@ -406,7 +405,9 @@ function renderData(){
 				saturation: 0.5,
 				brightness: 1
 			}
-		paper.view.draw()
+		eventRectLayer = new Layer(eventRect);
+		paper.view.draw();
+		renderEventName();
 	} else {
 		var eventRect = new Rectangle(
 			new Point((width / dateRange) * (eventStart - startYear), (bottom - clickNum)),
@@ -418,8 +419,8 @@ function renderData(){
 				saturation: 1,
 				brightness: 1
 			};
-		eventRectLayer = new Layer(eventRectPath)
-		paper.view.draw()
+		eventRectLayer = new Layer(eventRectPath);
+		paper.view.draw();
 		renderEventName();
 	}
 }
@@ -469,9 +470,9 @@ $('.scifi').click(function(){
 	for (i = 0; i < scifi.results.length; i++){
 		// inputEvent = new InputEvent(eventName, eventStartString, eventEndString)
 		var eventName = $('.event-name-input').val(scifi.results[i].name);
-		console.log(scifi.results[i].name)
 		var eventStartString = $('.event-start-input').val(scifi.results[i].start);
 		var eventEndString = $('.event-end-input').val(scifi.results[i].end);
+		// console.log(scifi.results[i].name)
 		$('.add').click();
 	}
 	paper.view.draw();

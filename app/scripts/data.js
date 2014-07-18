@@ -10,15 +10,15 @@
 var scifi = {
     "results": [
         {
-            "name": "Gene Roddenberry's Death",
-            "start": "1991",
-            "end": "1991",
-            "category": "scifi"
-        },
-        {
             "name": "TNG",
             "start": "1987",
             "end": "1994",
+            "category": "scifi"
+        },
+        {
+            "name": "Gene Roddenberry's Death",
+            "start": "1991",
+            "end": "1991",
             "category": "scifi"
         },
         {

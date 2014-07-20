@@ -57,12 +57,12 @@ var scifi = {
             "end": "2011",
             "category": "scifi"
         },
-        {
-            "name": "X-Files",
-            "start": "1993",
-            "end": "2002",
-            "category": "scifi"
-        },
+        // {
+        //     "name": "X-Files",
+        //     "start": "1993",
+        //     "end": "2002",
+        //     "category": "scifi"
+        // },
         {
             "name": "Farscape",
             "start": "1999",
@@ -102,14 +102,14 @@ var scifi = {
         {
             "name": "Falling Skies",
             "start": "2011",
-            "end": "2017",
+            "end": "2014",
             "category": "scifi",
             "onGoing": true
         },
         {
             "name": "Continuum",
             "start": "2012",
-            "end": "2017",
+            "end": "2014",
             "category": "scifi",
             "onGoing": true
         },
@@ -141,7 +141,7 @@ var scifi = {
         {
             "name": "Futurama",
             "start": "1999",
-            "end": "2017",
+            "end": "2014",
             "category": "scifi",
             "onGoing": true
         },
@@ -151,12 +151,13 @@ var scifi = {
             "end": "2004",
             "category": "scifi"
         },
-        {
-            "name": "Quantum Leap",
-            "start": "1989",
-            "end": "1993",
-            "category": "scifi"
-        },
+        // {
+        //     "name": "Quantum Leap",
+        //     "start": "1989",
+        //     "end": "1993",
+        //     "category": "scifi"
+        // }
+        ,
         {
             "name": "Revolution",
             "start": "2012",
@@ -168,12 +169,13 @@ var scifi = {
             "start": "2011",
             "end": "2012",
             "category": "scifi"
-        },
-        {
-            "name": "Warehouse 13",
-            "start": "2009",
-            "end": "2014",
-            "category": "scifi"
         }
+        // ,
+        // {
+        //     "name": "Warehouse 13",
+        //     "start": "2009",
+        //     "end": "2014",
+        //     "category": "scifi"
+        // }
     ]
 }

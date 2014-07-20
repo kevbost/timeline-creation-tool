@@ -23,8 +23,6 @@ Parse.history.start();
 // =======================================================================
 	window.onload = function() {
     paper.setup('myCanvas');
-    // paper.setup('orbitCanvas');
-		// paper.setup('scifiCanvas');
 	};
 
   $('.navbar-brand').click(function(){
@@ -32,7 +30,6 @@ Parse.history.start();
   });
 
   $('.scifi').click(function(){
-    // $('.canvas-container').empty()
     $('.navbar-toggle').click();
   });
 

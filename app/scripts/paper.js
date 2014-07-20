@@ -7,7 +7,6 @@ var splashText = new PointText({
 	fontSize: 20,
 	// fontFamily: 'Lato',
 	// fontWeight: '500',
-	blendMode: 'xor',
 	content: "\nTIMELINE CREATION TOOL\n\nInput a START YEAR\nand an END YEAR.\n",
 	fillColor: {
 		hue: Math.random() * 360,
@@ -25,6 +24,17 @@ var splashText = new PointText({
 		splashText.fillColor.hue += 1;
 	}
 });
+
+renderBG()
+
+// ==================
+// Background
+// ==================
+function renderBG(){
+	var BG = new Rectangle(0, 0, view.bounds.width, view.bounds.height);
+	var fillBG = new Path.Rectangle(BG);
+		fillBG.fillColor = '#333333';
+}
 
 // ==================
 // ORBIT
@@ -519,12 +529,13 @@ function renderData(){
 // Buttons
 // ================== 
 $('.go').click(function() {
+	project.clear();
 	var startYearString = $('.startYear').val();
 	var endYearString = $('.endYear').val();
 	inputDate = new InputDate(startYearString, endYearString);
 	// console.log(inputDate)
 	checkInputDate()
-})
+});
 
 $('.add').click(function() {
 	var eventName = $('.event-name-input').val();
@@ -537,15 +548,17 @@ $('.add').click(function() {
 	clickNums()
 	clicksOne()
 	console.log("clickOne:", clickOne, ", clickNum:", clickNum);
-	if (clickOne === (view.size.height - 84) / 20){
+	// console.log((view.size.height - 84) / 20)
+	if (clickOne === (view.size.height - 104) / 20){
 		$('.notification-text').html(clickOne + ' is the total number of points that this graph can display.');
 		$('.add').prop( "disabled", true);
 		$('.notification-text').addClass('activated');
 	}
-})
+});
 
 $('.scifi').click(function(){
 	project.clear();
+	renderBG()
 	paper.view.draw();
 
 	tracking = false;
@@ -562,13 +575,14 @@ $('.scifi').click(function(){
 		$('.add').click();
 	}
 	paper.view.draw();
-})
+});
 
 $('.orbit').click(function(){
 	project.clear();
+	renderBG();
 
 	tracking = true;
 	loadOrbitVariables();
 
 	paper.view.draw();
-})
+});

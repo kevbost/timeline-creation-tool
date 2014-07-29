@@ -1,5 +1,9 @@
 $( document ).ready(function() {
     console.log( "ready!" );
+    paper.install(window);
+var canvas = document.getElementById('myCanvas');
+		// Create an empty project and a view for the canvas:
+paper.setup(canvas);
 // ================== 
 // Instructions
 // ================== 

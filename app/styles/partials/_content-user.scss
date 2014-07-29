@@ -80,6 +80,7 @@ a {
 	height: 100vh * 0.82;
 	background-color: $gray-dark;
 	box-shadow: 0 0 0 3px black;
+	font-family: 'Muli', sans-serif;
     @media screen and (max-width: 770px) {
 		height: 100vh * 0.765;
     	}
@@ -138,14 +139,14 @@ a {
 	}
 }
 
-.dateRange {
+.input-dates {
 	display: inherit;
 	&.activated {
 		display: none;
 	}
 }
 
-.dataPoint {
+.input-events {
 	display: none;
 	&.activated {
 		display: inherit;

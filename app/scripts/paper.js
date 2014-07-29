@@ -1,3 +1,5 @@
+$( document ).ready(function() {
+    console.log( "ready!" );
 // ================== 
 // Instructions
 // ================== 
@@ -585,4 +587,5 @@ $('.orbit').click(function(){
 	loadOrbitVariables();
 
 	paper.view.draw();
+});
 });
